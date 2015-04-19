@@ -35,7 +35,7 @@ These dependencies only affect output if they are used.
 Downloading
 -----------
 
-    git clone https://github.com/jlettvin/Ellipsis.git
+    - git clone https://github.com/jlettvin/Ellipsis.git
 
 Installation
 ------------
@@ -50,15 +50,15 @@ Documentation
 -------------
 
 To review an example paper:
-    cd Ellipsis/example/VisualPhotons
-    php -S localhost:8000 -t .
-    open -a Firefox http://localhost:8000
+    - cd Ellipsis/example/VisualPhotons
+    - php -S localhost:8000 -t .
+    - open -a Firefox http://localhost:8000
 
 On a MacIntosh, the following two commands shows the builtin documentation.
-    cd Ellipsis
-    mkdir $USER; cd $USER; mkdir $yourpaper; cd $yourpaper
-    php -S localhost:8000 -t .
-    open -a Firefox http://localhost:8000
+    - cd Ellipsis
+    - mkdir $USER; cd $USER; mkdir $yourpaper; cd $yourpaper
+    - php -S localhost:8000 -t .
+    - open -a Firefox http://localhost:8000
 
 Use your choice of browser to review if you prefer other than firefox.
 Use your choice of editor to create and modify files.
@@ -78,40 +78,40 @@ it may have a favicon.ico file.
 Each section of your paper (directory name) must appear in
 the Ellipsis file "..." in the parent directory.
 For instance, the file "..." typically contains:
-    Head
-    Introduction
-    Methods
-    Results
-    Discussion
-    Acknowledgments
-    Literature
-    Appendices
+    - Head
+    - Introduction
+    - Methods
+    - Results
+    - Discussion
+    - Acknowledgments
+    - Literature
+    - Appendices
 
 Executing "find ." on a directory containing a paper may appear as follows:
-    .
-    ./...
-    ./...ellipsis.png
-    ./Acknowledgments
-    ./Acknowledgments/Acknowledgments...
-    ./Appendices
-    ./Appendices/Appendices...
-    ./Discussion
-    ./Discussion/Discussion...
-    ./favicon.ico
-    ./Head
-    ./Head/Head...
-    ./index.php
-    ./Introduction
-    ./Introduction/Introduction...
-    ./Literature
-    ./Literature/Literature...
-    ./Methods
-    ./Methods/Methods..
-    ./Methods/Methods...
-    ./Missing
-    ./Missing/Missing...
-    ./Results
-    ./Results/Results...
+    - .
+    - ./...
+    - ./...ellipsis.png
+    - ./Acknowledgments
+    - ./Acknowledgments/Acknowledgments...
+    - ./Appendices
+    - ./Appendices/Appendices...
+    - ./Discussion
+    - ./Discussion/Discussion...
+    - ./favicon.ico
+    - ./Head
+    - ./Head/Head...
+    - ./index.php
+    - ./Introduction
+    - ./Introduction/Introduction...
+    - ./Literature
+    - ./Literature/Literature...
+    - ./Methods
+    - ./Methods/Methods..
+    - ./Methods/Methods...
+    - ./Missing
+    - ./Missing/Missing...
+    - ./Results
+    - ./Results/Results...
 
 
 Development
@@ -125,7 +125,7 @@ Send email to jlettvin@gmail.com.
 Git Access
 ----------
 
-    git clone https://github.com/jlettvin/Ellipsis.git
+    - git clone https://github.com/jlettvin/Ellipsis.git
 
 Ports
 -----

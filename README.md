@@ -2,6 +2,10 @@
                 Ellipsis Scientific Paper Drafting Utility
 
 Software Automation for Optimizing Scientific Paper Writing
+This software is a work in progress.
+It is not bulletproof since it is version 0.0.1.
+However, it actually works as can be see in the PDF file in the
+examples/VisualPhotons/ directory.
 
 What is it?
 -----------
@@ -40,21 +44,70 @@ and dependencies are satisfied,
 the user may immediately make use of it without further 
 configuration or installation.
 
-    cd Ellipsis
-    tar xvzf Ellipsis.tgz
-    mkdir {foryourpaper}
-    # Still must make distribution tool
-    cd {foryourpaper}
-    php -S localhost:443 -t .
-    open -a Firefox http://localhost:443
+    git clone https://github.com/jlettvin/Ellipsis.git
 
 Documentation
 -------------
 
 On a MacIntosh, the following two commands shows the builtin documentation.
+    cd Ellipsis
+    mkdir $USER; cd $USER; mkdir $yourpaper; cd $yourpaper
+    php -S localhost:8000 -t .
+    open -a Firefox http://localhost:8000
 
-    php -S localhost:443 -t .
-    open -a Firefox http://localhost:443
+Use your choice of browser to review if you prefer other than firefox.
+Use your choice of editor to create and modify files.
+
+The development cycle generally is two steps:
+    - edit one of the markup files
+    - refresh the browser
+
+For now, sections of your paper require a directory named for the section
+and a file of the same name with an extension of "..." to provide content
+in the directory for which it is named.
+If a directory is to be served by the builtin PHP server
+it must have an index.php and
+it should have a ...ellipsis.png file and
+it may have a favicon.ico file.
+
+Each section of your paper (directory name) must appear in
+the Ellipsis file "..." in the parent directory.
+For instance, the file "..." typically contains:
+    Head
+    Introduction
+    Methods
+    Results
+    Discussion
+    Acknowledgments
+    Literature
+    Appendices
+
+Executing "find ." on a directory containing a paper may appear as follows:
+    .
+    ./...
+    ./...ellipsis.png
+    ./Acknowledgments
+    ./Acknowledgments/Acknowledgments...
+    ./Appendices
+    ./Appendices/Appendices...
+    ./Discussion
+    ./Discussion/Discussion...
+    ./favicon.ico
+    ./Head
+    ./Head/Head...
+    ./index.php
+    ./Introduction
+    ./Introduction/Introduction...
+    ./Literature
+    ./Literature/Literature...
+    ./Methods
+    ./Methods/Methods..
+    ./Methods/Methods...
+    ./Missing
+    ./Missing/Missing...
+    ./Results
+    ./Results/Results...
+
 
 Development
 -----------
@@ -62,14 +115,25 @@ Development
 Bug Reporting
 -------------
 
+Send email to jlettvin@gmail.com.
+
 Git Access
 ----------
+
+    git clone https://github.com/jlettvin/Ellipsis.git
 
 Ports
 -----
 
 Licensing
 ---------
+
+All files in this suite are 
+    Copyright(c) 2015 Jonathan D. Lettvin, All Rights Reserved.
+All files are offered under the Gnu General License 3.0
+and attribution must be made to Jonathan D. Lettvin
+for derivative works, modifications, or re-use of code in other works
+and other locations where this code appear or get used.
 
 -------------------------------------------------------------------------------
 Copyright(c) 2015 Jonathan D. Lettvin, All Rights Reserved.

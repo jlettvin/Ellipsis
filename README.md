@@ -53,12 +53,30 @@ configuration or installation.
 Documentation
 -------------
 
+The documentation is still a work in progress.
+The full documentation is available by going to the Ellipsis directory
+and executing:
+```
+$ php -S localhost:8001 -t .
+$ open -a Firefox http://localhost:8001
+```
+
 To review an example paper:
 ```
 $ cd Ellipsis/example/VisualPhotons
 $ php -S localhost:8000 -t .
 $ open -a Firefox http://localhost:8000
 ```
+
+Load one of the markup files into your favorite editor
+to see what the markup looks like.
+For instance, the file
+```
+Ellipsis/example/VisualPhotons/Introduction/Introduction...
+```
+Has a great deal of content and examples of markup usage.
+These include equations, figures, gnuplot, graphviz, listings,
+bullet lists.
 
 On a MacIntosh, the following two commands shows the builtin documentation.
 ```
@@ -128,6 +146,11 @@ $ find .
 
 Development
 -----------
+
+The software comprises a suite of PHP modules prefixed with "...".
+This has the effect of making the source invisible to standard
+directory listings, and also makes it easy for modules to be
+identified and loaded into an executing suite.
 
 Bug Reporting
 -------------

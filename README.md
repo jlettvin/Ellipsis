@@ -1,11 +1,6 @@
 # Ellipsis
-                Ellipsis Scientific Paper Drafting Utility
-
-Software Automation for Optimizing Scientific Paper Writing
-This software is a work in progress.
-It is not bulletproof since it is version 0.0.1.
-However, it actually works as can be see in the PDF file in the
-examples/VisualPhotons/ directory.
+## Ellipsis Scientific Paper Drafting Utility
+### Software Automation for Optimizing Scientific Paper Writing
 
 What is it?
 -----------
@@ -16,6 +11,11 @@ in preparation for final drafting for publication.
 
 The Latest Version
 ------------------
+
+This software is a work in progress.
+It is not bulletproof since it is version 0.0.1.
+However, it actually works as can be see in the PDF file in the
+examples/VisualPhotons/ directory.
 
 Dependencies
 ------------

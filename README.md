@@ -35,19 +35,24 @@ These dependencies only affect output if they are used.
 Downloading
 -----------
 
+    git clone https://github.com/jlettvin/Ellipsis.git
+
 Installation
 ------------
 
-Ellipsis is delivered on github.
+Ellipsis is delivered ready-to-use from github.
 When the archive is cloned in its own directory
 and dependencies are satisfied,
 the user may immediately make use of it without further 
 configuration or installation.
 
-    git clone https://github.com/jlettvin/Ellipsis.git
-
 Documentation
 -------------
+
+To review an example paper:
+    cd Ellipsis/example/VisualPhotons
+    php -S localhost:8000 -t .
+    open -a Firefox http://localhost:8000
 
 On a MacIntosh, the following two commands shows the builtin documentation.
     cd Ellipsis

@@ -76,7 +76,20 @@ Ellipsis/example/VisualPhotons/Introduction/Introduction...
 ```
 Has a great deal of content and examples of markup usage.
 These include equations, figures, gnuplot, graphviz, listings,
-bullet lists.
+bullet lists, tables.
+
+Additional features include:
+* automated numbering and labelling of objects
+* referencing of labelled objects
+* literature referencing
+* paragraph indentation
+* reminders (like inline post-it notes)
+* documentation immediately next to the material where it is needed
+* comments
+* boxes to surround text
+* line breaks including a type to break below images, tables, etc...
+* making resources automatically by running external programs
+* some debugging ability
 
 On a MacIntosh, the following two commands shows the builtin documentation.
 ```

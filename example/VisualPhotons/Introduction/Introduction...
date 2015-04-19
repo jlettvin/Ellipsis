@@ -1,0 +1,256 @@
+`figure.Airy|Airy pattern|RGB.Airy.small.png`
+___Whither and whence visual photons
+needs must uncertain be
+yet by lawful pattern ruled.
+Photons do not interact.
+As individual photons from a point source accumulate into an image
+they tend to accumulate as an Airy pattern.
+The accumulation has the character of a wave.
+
+___This pattern of intensity is ruled by `equation.Airy`.
+This formula represents the idealized continuous distribution
+from which deviation is unmeasurable at high photon counts.
+Discrete photons do not form a continuous set.
+Nor do sensors arranged along a grid in a focal plane in an eye or camera.
+The zoomed "pixels" in `figure.Airy` illustrate this grid
+for billions of RGB source photons seen for a centrally located point source.
+
+___Close examination reveals that different wavelengths
+contribute differentially to the pattern at different radii.
+Photographic and visual colors are typically thought to operate using RGB.
+The names R (red), G (green), and B (blue), as wavelengths,
+are typically thought to be related to color perception.
+In fact, color perception is independent of wavelength
+`reference.LettvinColorsOfThings`.
+The scientific labelling for RGB in retinal photoreceptor absorption
+is LMS for Long, Medium, and Short.
+However, since photography and displays use RGB,
+they will be used interchangeably.
+
+`figure.2points|<br />2 white points|
+{width="128" height="128"}
+hyperacuity0.original.png`
+`figure.2onretina|<br />Retinal image with a 1mm pupil|
+{width="128" height="128"}
+hyperacuity1.saturate.png`
+___The retinal image of two white RGB point sources
+incident on the human retina after traversing a 1mm pupil
+appears as an inchoate blur incapable of being resolved
+by Rayleigh criterion, Sparrow limit, or even
+traditional use of Fourier transform coupled with Nyquist sampling.
+
+___The wavelength dependence in `figure.2onretina`
+is even more apparent than for `figure.Airy`.
+This is the character of image for narrow band RGB illumination.
+This paper will explore the problem of forming
+retinal equivalent incident photons using broadband illumination
+and methods for producing suitable sensed images for
+analyzing how the sensory data for vision is presented.
+Even in `figure.2onretina`, enough photons are present
+to give the image a seemingly continuous character.
+^^^^
+<table align="left"><tr><td>
+`figure.1photon|<br />1 photon|Airy.kernel.11.0000001.gif`
+`figure.10photon|<br />10 photons|Airy.kernel.11.0000010.gif`
+`figure.100photon|<br />100 photons|Airy.kernel.11.0000100.gif`
+`figure.1000photon|<br />1000 photons|Airy.kernel.11.0001000.gif`
+</td></tr><tr><td>
+`figure.3photons|<br />3 photons|Airy.kernel.11.0000003.gif`
+`figure.30photon|<br />30 photons|Airy.kernel.11.0000030.gif`
+`figure.300photon|<br />300 photons|Airy.kernel.11.0000300.gif`
+`figure.3000photon|<br />3000 photons|Airy.kernel.11.0003000.gif`
+</td></tr></table>
+___When photon flux is low, the Airy pattern becomes
+more difficult to discern as can be seen in the models
+of accumulations of single monochromatic photon events
+in `figure.1photon` to `figure.3000photon`.
+
+___As can be seen, even at 3000 photons from a point source
+the Airy pattern is yet to assume the continuous character
+achieved at much higher photon fluxes experienced in daylight
+or even low incandescent lighting.
+
+___Vision still works fairly well at low light levels
+so whatever explanation is made for vision
+must account for the ability to convert patterns such as these
+to good enough quality internal reconstructions of the scene.
+
+___It is important to note that,
+when point sources are eccentric from the center,
+different wavelength photons refract and diffract
+to different centers aligned radially from the center;
+yet the perception of a polychromatic point is of a single point source.
+^^^^
+`figure.blackbody|Blackbody radiation|
+{width="256" height="256"}Blackbody.png`
+`figure.incandescent|Light bulb|
+{width="256" height="256"}Incandescent.png`
+___Natural lighting does not divide photons into
+the 3 or 4 energy bands discussed in the literature.
+Spectra are considered continuous in that
+no energies or wavelengths are forbidden.
+Typically, ambient light is broad spectrum as in `figure.blackbody`.
+Visible wavelengths are within the white region of the figure.
+The peak absorption of typical human photoreceptors are shown as
+colored vertical lines.
+Sunlight resembles the 6500K curve with atmospheric absorption.
+An incandescent lightbulb peak temperature is 3695K which yields
+a slope that appears to rise monotonically from the blue end to the red end.
+The spectrum of `figure.incandescent` is
+typical for a light bulb at 2800K.
+When walking from sunlight into incandescent light
+one does not perceive a change in colors.
+The change of spectrum does not change the colors seen.
+
+`comment.url|blackbody|
+https://code.google.com/p/agpy/source/browse/trunk/agpy/blackbody.py`
+
+`def.I_0|Peak intensity|I<sub>0</sub>`
+___The two spectra `figure.blackbody` and `figure.incandescent`
+were produced with `equation.blackbody`.
+The theory of this curve is well explored.
+Blackbody radiation may be specified with two parameters,
+T (degrees Kelvin).
+`equation.blackbody2|Blackbody equation in &lambda;|
+I(\lambda,T) =
+\frac{2 h c^3}{\lambda^5}\frac{1}{exp{\left(\frac{h c}{\lambda k T}\right)}-1}
+`
+`equation.blackbody|Blackbody equation in &nu;|
+I(\nu,T) =
+\frac{2h\nu^{3}}{c^2}\frac{1}{exp{\left(\frac{h\nu}{kT}\right)}-1}
+where:
+h=Planck constant
+c=speed of light in a vacuum
+k=Boltzmann constant
+&nu;=photon frequency
+T=body temperature in Kelvin
+`
+___Other spectra like `figure.receptor` and `figure.camera`
+are generated using short lists of coefficient triples (a,b,c).
+The curves in both of these figures took one or two triples each.
+This equation is used for convenient curve-fitting.
+`equation.gaussian|Gaussian function|
+Gauss(x) = a~exp{\left(-\frac{\left(x-b\right)^2}{2c^2}\right)}
+`
+
+^^^^
+`figure.receptor|Retinal receptor absorption|
+{width="256" height="256"}Receptor.png`
+`figure.camera|Camera pixel absorption|
+{width="256" height="256"}Camera.png`
+
+___The typical trichromat human has three cone photoreceptors L, M, and S.
+A fourth, rod photoreceptor, is labelled X in `figure.receptor`.
+As can be seen, all human photoreceptors
+absorb photons having short wavelengths.
+Absorption of photons at the longer end have sharp relative cutoffs
+such that the S cone absorbs almost no photons at wavelengths above ~550nm.
+The M cone cuts off at ~625nm, and L cone cuts off at ~710nm.
+Note the curious increase of L and M cone absorption at shorter wavelengths.
+All this indicates that the wavelengths in a scene are not
+as sharply divided into color planes
+as is assumed in standard image processing.
+
+___A critical function of vision is to identify
+readiness of a resource by its color.
+Regardless of the ambient light, a ripe apple should look red.
+In fact, it does when viewed under a blue sky, a green forest canopy,
+a red sunset, or by sodium light having only
+two yellow and one blue spectral line.
+The redness of the apple does not depend on
+the presence of long wavelength photons.
+This is called color constancy and is what was described
+for perception under `figure.blackbody` and `figure.incandescent`.
+
+`equation.Airy|Airy equation|I = I_0 \left({2 J_1(u) \over u}\right)^2`
+`equation.uparam|Airy parameter|u = {2 \pi a q \over \lambda R}
+where:
+J_1 = Bessel function of the first kind
+a = aperture radius
+q = focal plane offset
+&lambda; = photon wavelength
+R = distance from aperture to focal plane
+`
+Wave superposition rules when
+multiple points are being projected onto an image plane.
+The waves from all the points are summed
+and the result is squared to yield the intensity map (image).
+`equation.wave|Airy wave equation|A = A_0 {2 J_1(u) \over u}
+where:
+A_0 = \sqrt{I_0}
+`
+^^^^
+`gnuplot.Airy|Airy(x,y)|
+{width="256" height="256"}
+radius(a,x,y)=pi*sqrt((a*x)**2+(a*y)**2);
+wave(a,x,y)=2*besj1(radius(a,x,y))/(radius(a,x,y));
+Airy(a,x,y)=wave(a,x,y)**2;
+cubeAiry(a,x)=10*Airy(a,x,0)*(a*x)**3;
+set xrange[-4.22:4.22]; set yrange[-4.22:4.22]; set zrange[0:1];
+set isosamples 101,101; set pm3d at b; splot Airy(1,x,y);
+`
+
+___The conditions under which this occurs are special.
+An achromatic lens is required.
+
+
+___The straight lines predicted by optics between this origin
+identify the center of a probability distribution at the destination.
+The relative probability of a photon of specific energy from a specific source
+being absorbed within a specific tile in a grid of a tiled surface
+is calculated by integrating the infinitesimal probabilities over the tile.
+
+^^^^
+=== Retinal Photoreceptor Species Mosaic
+`figure.mosaicL|Mosaic L cones|{width="241" height="241"}speciesL.png`
+`figure.mosaicM|Mosaic M cones|{width="241" height="241"}speciesM.png`
+`figure.mosaicS|Mosaic S cones|{width="241" height="241"}speciesS.png`
+^^^^
+`make.mosaic|Create the model species mosaic|php species.php`
+`figure.mosaic|Species Mosaic|{width="241" height="241"}speciesLMS.png`
+
+___There are four photoreceptor species in the typical trichromat human eye.
+Variations in species presence and distribution are found in individuals.
+These images are fictional characterizations of what is found in vivo.
+The images are produced on a rectangular grid but, in vivo,
+the grid is more similar to a hexagonal grid, but nowhere near reliably.
+These distributions are largely consistent with published data:
+such as the site:
+^^^
+http://www.cvrl.org/database/text/intros/introdens.htm
+`table.photoreceptors|Photoreceptor Species|
+L|photoreceptors (cones shown as red)|~566nm peak absorption
+M|photoreceptors (cones shown as green)|~533nm peak absorption
+I|photoreceptors (rods shown as cyan)|~498nm peak absorption
+S|photoreceptors (cones shown as blue)|~433nm peak absorption
+`
+
+___L cones typically dominate in the macula but M cone dominance is not rare.
+S cones do not appear within 100&micro;M of center and are far fewer in number.
+Rods are not present in these figures
+and only begin to populate the retina in the outer part of the macula
+where they increase to 100% outside the macula.
+`table.photoreceptors` represents the species in the typical trichromat human.
+Note that the distribution has no reliable pattern and is effectively random.
+
+___As is shown in `figure.mosaicL` to `figure.mosaicS`,
+were the species to be treated as image planes,
+the effective image for each plane would have lacunae.
+This will be treated in a later paper focused on processing
+based on these effective images and the shapes of neurons.
+Here, it will be shown what information is present
+when full-spectrum scenes cause absorption events in the retina.
+
+Here is PHP code which generates the receptor mosaic images shown here.
+`listing.species|Generating the mosaic|species.php`
+
+`reference.LettvinColorsOfThings|The Colors Of Things|
+author        = Jerome Y. Lettvin et al
+etal          = Lettvin et al
+title         = The Colors Of Things
+month         = September
+journal       = Scientific American
+year          = 1986
+volume        = 255.3
+pages         = 84-92
+`

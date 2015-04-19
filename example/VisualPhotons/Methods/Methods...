@@ -1,0 +1,151 @@
+=== Full spectrum image file representation.
+
+___Currently, there is no popular stored image format capable of
+storing a full spectrum image of the sort needed for this analysis.
+It is possible to specify a format for use in this paper.
+The format for a given pixel may be given as a list of specifications.
+Each specification has 1 bit to identify the coefficients as either
+blackbody `figure.blackbody` `equation.blackbody`
+or gaussian `equation.gaussian2` (a variation on `equation.gaussian`).
+If identified as blackbody,
+a pair of (I<sub>0</sub>,T) coefficients or (a,b) follows. 
+If identified as gaussian, an (\(I_0,\lambda_{peak},RMSwidth\))
+or (a,b,c) coefficient triple follows. 
+
+`equation.gaussian2|Gaussian function in &lambda;|
+I(\lambda) =
+I_0~exp{\left(
+-\frac{\left(\lambda-\lambda_{peak}
+\right)^2}{2 RMSwidth^2}\right)}
+`
+
+___The spectrum of a pixel may be fully described as a list of components:
+(B:((a1,b1),(a2,b2)...), G:((a3,b3,c3),(a4,b4,c4)...)).
+Each coefficient is a floating point number limited to a small range.
+Using the "half" float (16 bits), it is possible for
+blackbody specifications to occupy 32 bits and gaussian to occupy 48 bits.
+\(I_0\) Cannot be negative, so the sign bit of coefficient a
+may be used to indicate whether it is a G (gaussian) or B (blackbody).
+For shorthand, uppercase letters will indicate Blackbody coefficients
+when the first coefficient is negative.
+Here is a fanciful pixel spectrum: (A1,B1,a2,b2,c2,a3,b3,c3,A4,B4).
+In most cases, only one or two components will be used.
+In no case shown in this paper will blackbody and gaussian components be mixed.
+
+`figure.whitebody|White Body Spectrum|
+{width="256" height="256"}WhiteBody.png`
+`figure.LEDs|RGB LED Spectrum|
+{width="256" height="256"}LEDs.png`
+___An example is the white body spectrum `figure.whitebody`
+where intensity variation over the entire visible spectrum is less than 1%.
+This is expressable as the 96 bit or 12 byte (A1,B1,A2,B2,A3,B3) with values
+^^^
+(-1e-2,8.7e+3,-3.226e-2,5.6e+3,-1.732e+0,3e+3).
+Note the negative values for A1, A2, and A3
+indicating black body coefficients.
+
+___Another example is the spectral composition of a white LED pixel
+when using LEDs of types R:AlGaAs, G:AlGaInP, B:InGaN.
+The b coefficient is given in nanometers.
+`figure.LEDs`.
+In this figure, each component is given by a single gaussian.
+^^^
+(\(I_R\),610,0.18e-7,\(I_G\),550,0.18e-7,\(I_B\),450,1.7e-7,0.18e-7)
+
+___Typically, images are laid out as either raster sequences of pixels
+or as vector graphics.  Another alternative, used here,
+is to give the coordinates of a pixel at which a spectrum is expressed.
+With (x,y) expressed as 12 bits for each coordinate (24 bits)
+a pixel is expressed as (x,y,a1,b1,c1,a2,b2,c2...).
+3 bytes for coordinates and
+6 bytes for each gaussian or 4 bytes for each blackbody component.
+This pixel spectrum may be used for spectral calculations
+such as multiplying the probabilities of capture by a photoreceptor
+by the probabilities of photons arriving from a scene.
+An S photoreceptor `figure.receptor` takes 9 bytes.
+An M and L photoreceptor each take 15 bytes
+for complete spectral representation.
+For instance with positive a1, and a2 for gaussian coefficients:
+`bulleted.spectra|Spectra for human cones|
+L cone spectrum (x1,y1,I0,564,0.58e-7,0.25*I_0,400,0.58e-7)
+M cone spectrum (x2,y2,I0,534,0.58e-7,0.25*I_0,400,0.58e-7)
+I rods spectrum (x3,y3,I0,498,0.58e-7,0.25*I_0,400,0.58e-7)
+S cone spectrum (x4,y4,I0,420,0.58e-7)
+`
+___The spectra of `figure.receptor` were generated using these coefficients
+and they may be compared favorably with
+published absorption spectra for human photoreceptors,
+notably `reference.Dartnall`.
+`reference.Dartnall|Dartnall and Bowmaker|
+author = Bowmaker J.K. and Dartnall H.J.A.
+year = 1980
+title = Visual pigments of rods and cones in a human retina
+journal = J. Physiol.
+volume = 298
+pages = 501-511
+PMC = 1279132
+PMID = 7359434
+`
+
+___While the stored form of a full photograph would be
+expanded by about a factor of 4 with use of this representation,
+an image composed of photons from point sources may actually be
+far smaller than with traditional RGB digital images yet
+capable of expressing the full spectra required for analyzing
+vision in natural light settings.
+
+=== Photon probability chain
+
+Probabilities for photon capture are products of probabilities
+for every step between emission and absorption.
+The spectrum of blackbody emission \(E_{\lambda}\) is
+a probability function of wavelength.
+Objects have a surface reflectance spectrum \(S_{\lambda}\).
+The cornea and lens have a refraction spectrum \(L_{\lambda}\)
+at each retinal photoreceptor.
+The pupil has a diffraction spectrum \(P_{\lambda}\)
+at each retinal photoreceptor where it is absorbed.
+Finally, each species of photoreceptor has
+an absorption spectrum \(A_{\lambda}\).
+The relative probability of a photon from the point source
+being absorbed by the particular photoreceptor is shown in `equation.chain`.
+
+`equation.chain|Probability chain|
+E_{\lambda} * S_{\lambda} * L_{\lambda} * P_{\lambda} * A_{\lambda}
+`
+
+`graph.chain|Probability chain|
+"Photon\nEmission"->
+"Surface\nReflection"->
+"Lens\nRefraction"->
+"Pupil\nDiffractive"->
+"Photoreceptor\nAbsorption";
+`
+
+
+In effect, each spectrum between emission and absorption
+modifies the image as absorbed.
+No single step in the chain stands alone as dominating the result.
+Isotropic emission from a blackbody doesn't alter
+the course of a photon to the photoreceptor.
+Isotropic reflection, also, doesn't differentially change photon pathways.
+Refraction performs an Affine transform with the pattern seen for
+short wavelength photons displaced further to the outside.
+Diffraction performs two function:
+convolution with a spatially limited discrete Airy kernel
+followed by an affine transform with
+long wavelength photons displaced further to the outside.
+
+The resulting function of wavelength forms a probability pattern
+which may be converted to a wave equation for superposition.
+Since the final step in the chain is multiplication by
+the absorption spectrum of the photoreceptor,
+the apparent image incident on each species of receptor
+differs substantially from that for other species.
+
+=== RGB test pattern
+
+`figure.RGBtest|RGB test pattern|TestPattern.png`
+^^^^
+`figure.121original|Another RGB pattern|121x121.png`
+`figure.121retinal|As incident on retina|121x121.png.Human.refract.Airy.png`

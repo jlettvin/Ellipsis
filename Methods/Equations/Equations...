@@ -1,0 +1,7 @@
+Equations may be referenced before or after their definition.
+^^^^
+`equation.Pythagoras`
+^^^^
+`equation.Pythagoras|Pythagorean theorem|a^2 = b^2 + c^2`
+^^^^
+`equation.Pythagoras`

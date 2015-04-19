@@ -1,0 +1,86 @@
+___Ordinary text can appear anywhere.
+`  `No special markup or markdown is necessary to have ordinary text appear.
+`  `A paragraph is construed as
+any block of text not separated by an empty line.
+`  `An empty line is used to indicate the beginning of a new paragraph.
+
+___Text is indented or given extra space by using
+three underscores in a row ___ at the beginning of a line.
+`  `This enables authors to use traditional indenting of paragraphs.
+It can also be achieved with backticks enclosing three spaces.
+`  `Backticks enclosing two spaces separates sentences by more than one space.
+
+
+___Ordinary HTML wraps text around
+images and other block material aligned to either side.
+`  `To avoid this, a string of four 'v's (letters v) in a row
+forces text to continue underneath the block.
+`  `To stop the current line and continue on the next,
+a string of three 'v's becomes a simple line break.
+
+==== Equations
+
+`   `Equations can be referenced both backwards and forwards.
+`  `For instance,
+    `equation.Pythagoras`
+has not been defined yet but will be defined below.
+`  `Equations make use of `TeX` notation.
+    `equation.Pythagoras|Pythagorean theorem|a^2 = b^2 + c^2`
+`  `Now that it has been defined, we can reference it again here with
+    `equation.Pythagoras`.
+    `equation.quadratic|the quadratic formula|-b \pm \sqrt{b^2 - 4ac} \over 2a`
+`   `Here we show the quadratic `equation.quadratic` to illustrate that
+numbering extends over multiple equations.
+
+`equation`
+`equation?This is a bookmark for a future equation.`
+`equation?`
+
+==== Plots
+
+Here, we just backtick gnuplot to see defaults and source location.
+`gnuplot`
+
+Here, we backtick with an id to forward reference..
+`gnuplot.cos`
+
+Here, we backtick a future plot.
+`gnuplot?This is a bookmark for a future plot.  This note describes it.`
+
+Here, we ask for the gnuplot service documentation.
+`gnuplot?`
+
+Here, we backtick define a gnuplot.
+`gnuplot.cos|cos(x) and sin(x)|{width="256" height="256"}plot cos(x) lw 3,sin(x) lw 3`
+This is text that wraps around the image.
+^^^^
+This text is pushed below the image.
+
+==== Graphs
+`graph.sample
+|Simple directed graph|
+A -> B;
+`
+A reference to `graph.sample` is used here.
+^^^^
+
+==== Listings
+`listing.sample|Simple file listing|index.php`
+^^^^
+
+==== Boxes
+`box.haiku1||
+Mountain spring.  Quick!  Look!
+Spotless leopard frog kicks deep.
+Sweet cold green water.
+`
+^^^^
+
+==== Directory Tree
+`dirtree.dirtree|dirtee|foo`
+
+==== Other random
+
+`symboltable`
+`anonymous.thing|does nothing|This is not interesting.`
+`?`

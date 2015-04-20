@@ -183,6 +183,11 @@ an image of the equation
 which is displayed in a scientific paper typical form.
 
 ### References
+Most services generate a visual object in the body of a draft paper.
+These objects are identified both by type and by a sequence number
+within the type, much as they are in scientific papers.
+Figure<sup>1</sup> will appear both with the object itself
+and at every reference made to it using the syntax described here.
 To refer to the equation in a text portion of the paper use:<br/>
 `` `equation.euler` ``
 
@@ -207,8 +212,14 @@ without searching or trying to remember where it is.  Just use:<br/>
 ### Default service parameters
 If a service unit has default values associated with its use,
 these may be displayed inline within the text,
+in a gray colored sticky-note.
 much like reminders and documentation, by using:<br/>
 `` `equation` ``
+
+### Sticky-notes are conveniences
+There is no impact on content other than making temporary space
+for a sticky note within the draft paper.
+Removing the sticky-note markup eliminates the note.
 
 Development
 -----------
@@ -237,10 +248,12 @@ Licensing
 ---------
 
 All files in this suite are 
-    Copyright(c) 2015 Jonathan D. Lettvin, All Rights Reserved.
+```
+Copyright(c) 2015 Jonathan D. Lettvin, All Rights Reserved.
+```
 All files are offered under the Gnu General License 3.0
 and attribution must be made to Jonathan D. Lettvin
-for derivative works, modifications, or re-use of code in other works
+at least for derivative works, modifications, or re-use of code in other works
 and other locations where this code appear or get used.
 
 -------------------------------------------------------------------------------

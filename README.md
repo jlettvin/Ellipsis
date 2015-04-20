@@ -8,10 +8,10 @@ What is it?
 Writing scientific papers is difficult because the tools are cumbersome.
 Configuring a variety of programs and libraries
 and making them cooperate to yield a paper in final form
-takes substantial time.
+takes substantial time and skill.
 
-The purpose of Ellipsis is to reduce the burden on the author
-and make drafting the paper into a simple rapid development process
+The purpose of Ellipsis is to reduce the time and skill burden on the author,
+and make drafting the paper into a simple rapid development process,
 much as software engineers often develop for their own convenience.
 
 The Ellipsis utility is a portable markdown system

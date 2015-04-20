@@ -28,8 +28,18 @@ and a variety of others may all be used in the same markdown
 and used to drive their native programs to generate objects
 required for display by the draft.
 
+Each xenofile external language is supported by a "service" module
+which implements a convenient low-syntax shim to that language.
+New service modules are fairly simple to write and
+support for additional external languages can be accomplished
+in minutes to hours.
+
+Both the service modules and base set of Ellipsis services
+occupy modules with a special comment syntax wherein
+documentation is supposed to reside for display at run-time on need.
 Builtin documentation, sticky-note reminders, and other conveniences
 are quick at hand using the simple backtick unit syntax.
+See below for details on the backtick syntax.
 
 Here is a snippet of markdown to illustrate figures and literature references:
 ```

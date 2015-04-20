@@ -41,8 +41,9 @@ Builtin documentation, sticky-note reminders, and other conveniences
 are quick at hand using the simple backtick unit syntax.
 See below for details on the backtick syntax.
 
-Here is a link to a draft PDF paper written with Ellipsis.
-[Draft](https://github.com/jlettvin/Ellipsis/blob/master/example/VisualPhotons/VisualPhotons.pdf)
+Here is a link to an
+[incomplete draft PDF](https://github.com/jlettvin/Ellipsis/blob/master/example/VisualPhotons/VisualPhotons.pdf)
+written entirely using Ellipsis in less than a day.
 
 Here is a snippet of markdown to illustrate figures and literature references:
 ```
@@ -78,6 +79,11 @@ set xrange[-4.22:4.22]; set yrange[-4.22:4.22]; set zrange[0:1];
 set isosamples 101,101; set pm3d at b; splot Airy(1,x,y);
 `
 ```
+
+Objects may also be generated on-the-fly using the
+"make" service module.
+It is used in the sample paper to generate the
+photoreceptor mosaic images.
 
 The Latest Version
 ------------------

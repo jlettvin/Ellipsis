@@ -248,12 +248,13 @@ as a service using a specialized "backtick" language.
 #### Example
 `` `equation.euler|The Euler Identity|e^{i\pi}+1=0` ``
 
-This backtick enclosed unit names the "equation" function,
+This backtick enclosed unit names the "equation" service,
 identifies the equation for later reference as "euler",
-labels the displayed equation with "equation 1: The Euler Identity",
+labels the displayed equation with text resembling
+"equation 1: The Euler Identity",
 and submits the TeX language fragment to MathJAX for conversion to
 an image of the equation
-which is displayed in a scientific paper typical form.
+which is displayed in a form typical of scientific papers.
 
 ### References
 Most services generate a visual object in the body of a draft paper.

@@ -41,6 +41,9 @@ Builtin documentation, sticky-note reminders, and other conveniences
 are quick at hand using the simple backtick unit syntax.
 See below for details on the backtick syntax.
 
+Here is a link to a draft PDF paper written with Ellipsis.
+[Draft](https://github.com/jlettvin/Ellipsis/blob/master/example/VisualPhotons/VisualPhotons.pdf)
+
 Here is a snippet of markdown to illustrate figures and literature references:
 ```
 In fact, color perception is independent of wavelength

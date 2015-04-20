@@ -9,6 +9,11 @@ The Ellipsis utility is a portable markup system
 enabling rapid drafting of medium quality scientific papers
 in preparation for final drafting for publication.
 
+It uses the "xenofile principle",
+enabling the mixing of many diverse software languages in one marked up file
+to achieve a resulting draft scientific paper
+that would otherwise require consolidating results from separate files.
+
 The Latest Version
 ------------------
 
@@ -156,6 +161,29 @@ $ find .
 ./Results
 ./Results/Results...
 ```
+
+Syntax
+------
+
+Ellipsis uses "service" modules to integrate multiple languages.
+Fragments of code in these languages are executed in their native applications
+as a service using a specialized "backtick" language.
+
+The structure of a backtick unit is:
+```
+&#96;{servicename}.{uniqueidentifier}|{displaylabel}|{code fragment}&#96;
+```
+
+For instance:
+```
+&#96;equation.euler|The Euler Identity|e^{i\pi}+1=0&#96;
+```
+This backtick enclosed unit names the "equation" function,
+identifies the equation for later reference as "euler",
+labels the displayed equation with "equation 1: The Euler Identity",
+and submits the TeX language fragment to MathJAX for conversion to
+an image of the equation
+which is displayed in a scientific paper typical form.
 
 Development
 -----------

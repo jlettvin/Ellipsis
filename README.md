@@ -169,11 +169,11 @@ Ellipsis uses "service" modules to integrate multiple languages.
 Fragments of code in these languages are executed in their native applications
 as a service using a specialized "backtick" language.
 
-The structure of a backtick unit is:
-&#96;{servicename}.{uniqueidentifier}|{displaylabel}|{code fragment}&#96;
+The structure of a backtick unit is:<br/>
+``{servicename}.{uniqueidentifier}|{displaylabel}|{code fragment}``
 
-For instance:
-&#96;equation.euler|The Euler Identity|e^{i\pi}+1=0&#96;
+For instance:<br/>
+``equation.euler|The Euler Identity|e^{i\pi}+1=0``
 This backtick enclosed unit names the "equation" function,
 identifies the equation for later reference as "euler",
 labels the displayed equation with "equation 1: The Euler Identity",

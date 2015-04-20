@@ -314,7 +314,7 @@ Removing the sticky-note markdown eliminates the note.
 ### Available modules
 These will change (mostly increase) as development continues.
 
-| ** $service        | function                                             |
+| ** $service **     | function                                             |
 | -------------------| -----------------------------------------------------|
 | ** \`bulleted\`**  | makes a bullet list                                  |
 | ** \`box\`**       | draws a single line box around its $code             |

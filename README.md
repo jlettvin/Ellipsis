@@ -314,21 +314,21 @@ Removing the sticky-note markdown eliminates the note.
 ### Available modules
 These will change (mostly increase) as development continues.
 
-| ** $service **     | function                                             |
+|    $service        | function                                             |
 | -------------------| -----------------------------------------------------|
-| ** \`bulleted\`**  | makes a bullet list                                  |
-| ** \`box\`**       | draws a single line box around its $code             |
-| ** \`comment\`**   | makes an undisplayed annotation in the source        |
-| ** \`dirtree\`**   | makes a list of files in the paper's directory tree  |
-| ** \`equation\`**  | uses MathJAX to generate a math display              |
-| ** \`figure\`**    | displays an image (jpeg, gif, png, and more...)      |
-| ** \`gnuplot\`**   | makes a plot                                         |
-| ** \`graphviz\`**  | makes a graph                                        |
-| ** \`listing\`**   | shows source code from a file                        |
-| ** \`make\`**      | runs an external program (shell)                     |
-| ** \`reference\`** | makes a reference to literature                      |
-| ** \`table\`**     | makes a table                                        |
-| ** \`timestamp\`** | makes a timestamp                                    |
+|    \`bulleted\`    | makes a bullet list                                  |
+|    \`box\`         | draws a single line box around its $code             |
+|    \`comment\`     | makes an undisplayed annotation in the source        |
+|    \`dirtree\`     | makes a list of files in the paper's directory tree  |
+|    \`equation\`    | uses MathJAX to generate a math display              |
+|    \`figure\`      | displays an image (jpeg, gif, png, and more...)      |
+|    \`gnuplot\`     | makes a plot                                         |
+|    \`graphviz\`    | makes a graph                                        |
+|    \`listing\`     | shows source code from a file                        |
+|    \`make\`        | runs an external program (shell)                     |
+|    \`reference\`   | makes a reference to literature                      |
+|    \`table\`       | makes a table                                        |
+|    \`timestamp\`   | makes a timestamp                                    |
 
 Development
 -----------

@@ -5,14 +5,66 @@
 What is it?
 -----------
 
+Writing scientific papers is difficult.
+Configuring a variety of programs and libraries
+and making them cooperate to yield a paper in final form
+takes substantial time.
+
+The purpose of Ellipsis is to reduce the burden on the author
+and make drafting the paper into a simple rapid development process
+much as software engineers often develop for their own convenience.
+
 The Ellipsis utility is a portable markup system
 enabling rapid drafting of medium quality scientific papers
-in preparation for final drafting for publication.
+in preparation for final drafting before publication.
 
 It uses the "xenofile principle",
-enabling the mixing of many diverse software languages in one marked up file
+enabling the mixing of many diverse software languages in one markup file
 to achieve a resulting draft scientific paper
 that would otherwise require consolidating results from separate files.
+
+In other words, gnuplot syntax, graphviz syntax, TeX syntax
+and a variety of others may all be used in the same markdown
+and used to drive their native programs to generate objects
+required for display by the draft.
+
+Builtin documentation, sticky-note reminders, and other conveniences
+are quick at hand using the simple backtick unit syntax.
+
+Here is a snippet of markdown to illustrate:
+```
+In fact, color perception is independent of wavelength
+`reference.LettvinColorsOfThings`.
+The scientific labelling for RGB in retinal photoreceptor absorption
+is LMS for Long, Medium, and Short.
+However, since photography and displays use RGB,
+they will be used interchangeably.
+
+`figure.2points|<br />2 white points|
+{width="128" height="128"}
+hyperacuity0.original.png`
+`figure.2onretina|<br />Retinal image with a 1mm pupil|
+{width="128" height="128"}
+hyperacuity1.saturate.png`
+___The retinal image of two white RGB point sources
+incident on the human retina after traversing a 1mm pupil
+appears as an inchoate blur incapable of being resolved
+by Rayleigh criterion, Sparrow limit, or even
+traditional use of Fourier transform coupled with Nyquist sampling.
+```
+
+Here is another example snippet:
+```
+`gnuplot.Airy|Airy(x,y)|
+{width="256" height="256"}
+radius(a,x,y)=pi*sqrt((a*x)**2+(a*y)**2);
+wave(a,x,y)=2*besj1(radius(a,x,y))/(radius(a,x,y));
+Airy(a,x,y)=wave(a,x,y)**2;
+cubeAiry(a,x)=10*Airy(a,x,0)*(a*x)**3;
+set xrange[-4.22:4.22]; set yrange[-4.22:4.22]; set zrange[0:1];
+set isosamples 101,101; set pm3d at b; splot Airy(1,x,y);
+`
+```
 
 The Latest Version
 ------------------
@@ -21,6 +73,17 @@ This software is a work in progress.
 It is not bulletproof since it is the first version.
 However, it actually works as can be see in the PDF file in the
 examples/VisualPhotons/ directory.
+
+Requirements
+------------
+
+Ellipsis must occupy a parent directory from the paper you wish to draft.
+It need not be an immediate parent, but it must be in the chain of parents.
+
+PHP of recent vintage is required due to the use of modern syntactic sugar
+such as [] instead of array().
+Ellipsis was begun on PHP version 5.4.30.
+This was updated to 5.4.38 recently, but this probably works with 5.3.
 
 Dependencies
 ------------
@@ -204,10 +267,16 @@ a question mark followed by text within the backtick unit:<br/>
 To get further documentation about the equation service
 a blue colored sticky-note feature can be shown temporarily
 directly within the displayed output.
-This sticky note formats the comments at the head of the service source file
-to enable authors to have the relevant documentation at their fingertips
+This sticky note formats
+special comments at the head of the service source file
+that have been specially commented with three slashes instead of two.
+Authors have the relevant documentation at their fingertips
 without searching or trying to remember where it is.  Just use:<br/>
 `` `equation?` ``
+
+A special form is available to output a complete review of
+modules and documentation.<br/>
+`` `symboltable` ``
 
 ### Default service parameters
 If a service unit has default values associated with its use,

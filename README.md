@@ -5,7 +5,7 @@
 What is it?
 -----------
 
-Writing scientific papers is difficult.
+Writing scientific papers is difficult because the tools are cumbersome.
 Configuring a variety of programs and libraries
 and making them cooperate to yield a paper in final form
 takes substantial time.
@@ -14,12 +14,12 @@ The purpose of Ellipsis is to reduce the burden on the author
 and make drafting the paper into a simple rapid development process
 much as software engineers often develop for their own convenience.
 
-The Ellipsis utility is a portable markup system
+The Ellipsis utility is a portable markdown system
 enabling rapid drafting of medium quality scientific papers
 in preparation for final drafting before publication.
 
 It uses the "xenofile principle",
-enabling the mixing of many diverse software languages in one markup file
+enabling the mixing of many diverse software languages in one markdown file
 to achieve a resulting draft scientific paper
 that would otherwise require consolidating results from separate files.
 
@@ -31,7 +31,7 @@ required for display by the draft.
 Builtin documentation, sticky-note reminders, and other conveniences
 are quick at hand using the simple backtick unit syntax.
 
-Here is a snippet of markdown to illustrate:
+Here is a snippet of markdown to illustrate figures and literature references:
 ```
 In fact, color perception is independent of wavelength
 `reference.LettvinColorsOfThings`.
@@ -53,7 +53,7 @@ by Rayleigh criterion, Sparrow limit, or even
 traditional use of Fourier transform coupled with Nyquist sampling.
 ```
 
-Here is another example snippet:
+Here is another example snippet showing a xenofile use of gnuplot:
 ```
 `gnuplot.Airy|Airy(x,y)|
 {width="256" height="256"}
@@ -136,13 +136,13 @@ $ php -S localhost:8000 -t .
 $ open -a Firefox http://localhost:8000
 ```
 
-Load one of the markup files into your favorite editor
-to see what the markup looks like.
+Load one of the markdown files into your favorite editor
+to see what the markdown looks like.
 For instance, the file
 ```
 Ellipsis/example/VisualPhotons/Introduction/Introduction...
 ```
-Has a great deal of content and examples of markup usage.
+Has a great deal of content and examples of markdown usage.
 These include equations, figures, gnuplot, graphviz, listings,
 bullet lists, tables.
 
@@ -171,7 +171,7 @@ Use your choice of browser to review if you prefer other than firefox.
 Use your choice of editor to create and modify files.
 
 The development cycle generally is two steps:
-1. edit one of the markup files
+1. edit one of the markdown files
 2. refresh the browser
 
 For now, sections of your paper require a directory named for the section
@@ -288,7 +288,7 @@ much like reminders and documentation, by using:<br/>
 ### Sticky-notes are conveniences
 There is no impact on content other than making temporary space
 for a sticky note within the draft paper.
-Removing the sticky-note markup eliminates the note.
+Removing the sticky-note markdown eliminates the note.
 
 Development
 -----------

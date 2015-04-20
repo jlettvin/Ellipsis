@@ -169,10 +169,10 @@ Ellipsis uses "service" modules to integrate multiple languages.
 Fragments of code in these languages are executed in their native applications
 as a service using a specialized "backtick" language.
 
-The structure of a backtick unit is:<br/>
+### Structure of the backtick unit
 `` `{servicename}.{uniqueidentifier}|{displaylabel}|{code fragment}` ``
 
-For instance:<br/>
+#### Example
 `` `equation.euler|The Euler Identity|e^{i\pi}+1=0` ``
 
 This backtick enclosed unit names the "equation" function,
@@ -181,6 +181,34 @@ labels the displayed equation with "equation 1: The Euler Identity",
 and submits the TeX language fragment to MathJAX for conversion to
 an image of the equation
 which is displayed in a scientific paper typical form.
+
+### References
+To refer to the equation in a text portion of the paper use:<br/>
+`` `equation.euler` ``
+
+Note that forward and backward references work without special effort.
+
+### Reminders
+To remind yourself of a paper preparation task,
+or literally any reminder you may wish to make,
+a pink colored sticky-note feature is available when you use
+a question mark followed by text within the backtick unit:<br/>
+`` `section?Remember to refer to that article about continental drift.` ``
+
+### Inline documentation
+To get further documentation about the equation service
+a blue colored sticky-note feature can be shown temporarily
+directly within the displayed output.
+This sticky note formats the comments at the head of the service source file
+to enable authors to have the relevant documentation at their fingertips
+without searching or trying to remember where it is.  Just use:<br/>
+`` `equation?` ``
+
+### Default service parameters
+If a service unit has default values associated with its use,
+these may be displayed inline within the text,
+much like reminders and documentation, by using:<br/>
+`` `equation` ``
 
 Development
 -----------

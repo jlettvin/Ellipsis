@@ -255,6 +255,12 @@ as a service using a specialized "backtick" language.
 * `` `{servicename}.{uniqueidentifier}|{displaylabel}|{code fragment}` ``
 * `` `$service.$id|$label|$code` ``  # PHP nomenclature
 
+The code fragment may also, in some cases, be prefixed by
+HTML attributes to modify positioning of the object in the form:
+```
+{attribute = "value", attribute = "value"}
+```
+
 #### Example
 `` `equation.euler|The Euler Identity|e^{i\pi}+1=0` ``
 

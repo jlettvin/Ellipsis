@@ -249,7 +249,7 @@ Syntax
 
 Ellipsis uses "service" modules to integrate multiple languages.
 Fragments of code in these languages are executed in their native applications
-as a service using a specialized "backtick" language.
+as a service using a specialized "backtick" markup.
 
 ### Structure of the backtick unit
 * `` `{servicename}.{uniqueidentifier}|{displaylabel}|{code fragment}` ``

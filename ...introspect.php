@@ -12,16 +12,16 @@ function gossip() {
 
     $buf .= str_repeat('1', 80).PHP_EOL;
     $parent = $backtrace[1];
-    $function = "{$parent['function']}({$parent[line]})";
+    $function = "{$parent['function']}({$parent['line']})";
     $buf .= $function.PHP_EOL;
-    print_r($parent[args]).PHP_EOL;
+    print_r($parent['args']).PHP_EOL;
 
     $buf .= str_repeat('2', 80).PHP_EOL;
     if (count($backtrace) > 2) {
         $grand = $backtrace[2];
-        $function = "{$grand['function']}({$grand[line]})";
+        $function = "{$grand['function']}({$grand['line']})";
         $buf .= $function.PHP_EOL;
-        print_r($grand[args]).PHP_EOL;
+        print_r($grand['args']).PHP_EOL;
     } else {
         $buf .= "No grandparent".PHP_EOL;
     }

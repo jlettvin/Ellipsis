@@ -8,23 +8,11 @@
 /// This module prepares in-text references and reference listings.
 /// $label is unused.
 
-// The order of these keys dictates the order of display.
-static $pubKeys = [
-    'booktitle', 'title', 'author', 'etal',
-    'publication', 'journal', 'edition',
-    'specific', 'year', 'month', 'date',
-    'volume', 'number', 'pages',
-    'publisher', 'organization', 'address',
-    'isbn',
-    'note'
-    ];
-
 function reference($the = []) {
     static $gparray = [];
     static $lbarray = [];
     static $N = 1;
     global $ellipsis;
-    global $pubKeys;
 
     static $theKeys = ['prefix', 'id', 'label', 'code'];
 
@@ -77,7 +65,18 @@ function reference($the = []) {
 
 function references() {
     global $ellipsis;
-    global $pubKeys;
+    // The order of these keys dictates the order of display.
+    $pubKeys = [
+        'booktitle', 'title', 'author', 'etal',
+        'publication', 'journal', 'edition',
+        'specific', 'year', 'month', 'date',
+        'volume', 'number', 'pages',
+        'publisher', 'organization', 'address',
+        'isbn',
+        'note'
+    ];
+
+    if (!isset($pubKeys)) echo "****FOO****";
     $ref = $ellipsis['reference'];
     $N = 1+count($ref) / 2;
     $return = '';

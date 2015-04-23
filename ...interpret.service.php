@@ -108,7 +108,8 @@ function interpret_service($text, $prefix='')
     $remind = function($part) use($processed, &$named, $prefix) {
         $fun = "remind";
         list($service, $notes) = array_slice($part, 1, 2);
-        if (function_exists($service)) {
+        //if (function_exists($service))
+        {
             $result =
                 '<table border="1" bgcolor="#f0e0e0"><tr><td align="center">'.
                 '<b><u>'.
@@ -116,8 +117,8 @@ function interpret_service($text, $prefix='')
                 '</u> reminder ...</b><hr/>'.
                 $notes.
                 '</td></tr></table>'.PHP_EOL;
-        } else {
-            $result = "(nonexistent: {$service}";
+        //} else {
+            //$result = "(nonexistent: {$service}";
         }
         return $result;
     };
@@ -203,9 +204,9 @@ function interpret_service($text, $prefix='')
     $order = [
         [$xf_define, $define, 'expand first for forward referencing'   ],
         [$xf_refer , $refer , 'expand 2nd to express referencing'      ],
+        [$xf_info  , $info  , 'inline help for services'               ],
         [$xf_remind, $remind, 'document places for further development'],
         [$xf_symbol, $symbol, 'document services or expand symbols'    ],
-        [$xf_info  , $info  , 'inline help for services'               ],
         ];
 
     foreach ($order as $item) {

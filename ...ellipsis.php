@@ -1,9 +1,11 @@
 <?php
 //namespace ELLIPSIS;
 
+static $contents = '...Contents';
+
 $ellipsis = [
     'symbol' => [],
-    'module' => ['...'=>['code'=>[], 'data'=>[]]],
+    'module' => [$contents=>['code'=>[], 'data'=>[]]],
     'doc'    => [],
     ];
 
@@ -44,36 +46,38 @@ foreach (glob(__DIR__.DIRECTORY_SEPARATOR."...*.php") as $filename) {
         $olddoc = $doc;
     }
     $ellipsis['module'][$service] = $about;
-    $ellipsis['module']['...']['code'][] = basename($filename);
+    $ellipsis['module'][$contents]['code'][] = basename($filename);
 }
 
 if (file_exists('ellipsis.png')) {
     $dir = basename(__DIR__);
     $sep = DIRECTORY_SEPARATOR;
-    if (file_exists($dir.'...'))
-        $ellipsis['module']['...']['data'][] = $dir.'...';
+    if (file_exists($dir.$contents))
+        $ellipsis['module'][$contents]['data'][] = $dir.$contents;
     foreach (
-        array_map('trim', explode(PHP_EOL, file_get_contents('...'))) as $x)
+        array_map(
+            'trim',
+            explode(PHP_EOL, file_get_contents($contents))) as $x)
     {
         if ($x == '') continue;
-        // if (file_exists($x.'...'))
-            // $ellipsis['module']['...']['data'][] = $x;
+        // if (file_exists($x.$contents))
+            // $ellipsis['module'][$contents]['data'][] = $x;
         if (is_dir($x)) {
-            $ellipsis['module']['...']['data'][] = $x.$sep;
+            $ellipsis['module'][$contents]['data'][] = $x.$sep;
             $markdown = "{$x}{$sep}{$x}...";
             //$cwd = getcwd();
             //chdir($x);
             if (is_readable($markdown))
-                $ellipsis['module']['...']['data'][] = $markdown;
+                $ellipsis['module'][$contents]['data'][] = $markdown;
             //chdir($cwd);
         }
     }
-    foreach (['...', 'index.php', 'ellipsis.png', 'README.md'] as $x) {
-        if (file_exists($x.'...'))
-            $ellipsis['module']['...']['data'][] = $x;
+    foreach ([$contents, 'index.php', 'ellipsis.png', 'README.md'] as $x) {
+        if (file_exists($x.$contents))
+            $ellipsis['module'][$contents]['data'][] = $x;
     }
 }
-//echo '<pre>'.implode('|', $ellipsis['module']['...']).'</pre>';
+//echo '<pre>'.implode('|', $ellipsis['module'][$contents]).'</pre>';
 
 specials();
 ?>

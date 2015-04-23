@@ -202,8 +202,8 @@ it should have a ...ellipsis.png file and
 it may have a favicon.ico file.
 
 Each section of your paper (directory name) must appear in
-the Ellipsis file "..." in the parent directory.
-For instance, the file "..." typically contains:
+the Ellipsis file "...Content" in the parent directory.
+For instance, the file "...Content" typically contains:
 ```
 Head
 Introduction
@@ -219,7 +219,7 @@ Executing "find ." on a directory containing a paper may appear as follows:
 ```
 $ find .
 .
-./...
+./...Content
 ./...ellipsis.png
 ./Acknowledgments
 ./Acknowledgments/Acknowledgments...

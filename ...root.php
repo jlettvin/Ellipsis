@@ -53,12 +53,13 @@ function ORDS($text) {
 
 error_reporting(E_ALL | E_STRICT);
 function root($argv=['www']) {
+    global $contents;
     static $MathJaxURL =
         "https://cdn.mathjax.org/mathjax/latest/MathJax.js";
     static $MathJaxQRY =
         "config=TeX-AMS-MML_HTMLorMML";
 
-    $dirs = is_readable('...') ? array_map('trim', file('...')) : [];
+    $dirs = is_readable($contents) ? array_map('trim', file($contents)) : [];
     extract(['cmd'=>(isset($argv) and is_array($argv) and (count($argv)>0)),
              'top'=>(count(debug_backtrace()) == 0),
              'web'=>(php_sapi_name()=='cli-server'),                        ]);

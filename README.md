@@ -1,5 +1,5 @@
 # Ellipsis
-## Ellipsis Scientific Paper Drafting Utility
+## Scientific Paper Drafting Utility
 ### Software Automation for Optimizing Scientific Paper Writing
 
 What is it?

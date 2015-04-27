@@ -138,6 +138,7 @@ different wavelength photons refract and diffract
 to different centers aligned radially from the center;
 yet the perception of a polychromatic point is of a single point source.
 
+^^^^^
 ==== Photons, Spectra, and Blackbodies
 
 `figure.solar|Solar Spectrum (wikimedia commons)|
@@ -173,6 +174,7 @@ have changed dramatically by the change in light source.
 `comment.url|blackbody|
 https://code.google.com/p/agpy/source/browse/trunk/agpy/blackbody.py`
 
+^^^^^
 `def.I_0|Peak intensity|I<sub>0</sub>`
 ___The two spectra of `figure.blackbody` and `figure.incandescent`
 were produced with `equation.blackbody`.
@@ -201,7 +203,7 @@ This equation is used for convenient curve-fitting.
 Gauss(x) = a~exp{\left(-\frac{\left(x-b\right)^2}{2c^2}\right)}
 `
 
-^^^^
+^^^^^
 `figure.receptor|Retinal receptor absorption|
 {width="256" height="256"}Receptor.png`
 `figure.camera|Camera pixel absorption|

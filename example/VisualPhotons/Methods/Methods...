@@ -31,7 +31,7 @@ when the first coefficient is negative.
 Here is a fanciful pixel spectrum: (A1,B1,a2,b2,c2,a3,b3,c3,A4,B4).
 In most cases, only one or two components will be used.
 In no case shown in this paper will blackbody and gaussian components be mixed.
-
+^^^^^
 `figure.whitebody|White Body Spectrum|
 {width="256" height="256"}WhiteBody.png`
 `figure.LEDs|RGB LED Spectrum|
@@ -142,7 +142,7 @@ Since the final step in the chain is multiplication by
 the absorption spectrum of the photoreceptor,
 the apparent image incident on each species of receptor
 differs substantially from that for other species.
-
+^^^^^
 === RGB test pattern
 
 `figure.RGBtest|RGB test pattern|TestPattern.png`

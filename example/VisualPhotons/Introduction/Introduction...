@@ -47,7 +47,7 @@ the primary focus of this paper.
 Images produced and encoded using these methods
 will enable further research into how retinal processing achieves invariance.
 
-==== Diffraction and Low Photon Counts
+==== Point Source Diffraction
 
 ___When a very large number of photons from a point source
 pass through an aperture and then fall on a surface
@@ -106,6 +106,7 @@ analyzing how the sensory data for vision is presented.
 Even in `figure.2onretina`, enough photons are present
 to give the image a seemingly continuous character.
 ^^^^^
+==== Low Photon Count Diffraction
 <table align="left"><tr><td>
 `figure.1photon|<br />1 photon|Airy.kernel.11.0000001.gif`
 `figure.10photon|<br />10 photons|Airy.kernel.11.0000010.gif`
@@ -270,9 +271,8 @@ The relative probability of a photon of specific energy from a specific source
 being absorbed within a specific tile in a grid of a tiled surface
 is calculated by integrating the infinitesimal probabilities over the tile.
 
-^^^^
 ^^^^^
-=== Retinal Photoreceptor Species Mosaic
+==== Retinal Photoreceptor Species Mosaic
 `figure.mosaicL|Mosaic L cones|{width="241" height="241"}speciesL.png`
 `figure.mosaicM|Mosaic M cones|{width="241" height="241"}speciesM.png`
 `figure.mosaicS|Mosaic S cones|{width="241" height="241"}speciesS.png`
@@ -325,3 +325,52 @@ year          = 1986
 volume        = 255.3
 pages         = 84-92
 `
+^^^^^
+==== Spectral Encoding Constraints
+Retinal photoreceptors respond to photons across the entire visual spectrum.
+To determine what a retinal response is to a scene lit by sunlight
+it is necessary to compute the dot product of
+the spectrum presented to a photoreceptor with its absorption spectrum.
+The point of this paper is to compute that dot product and
+show the effect this has on each of the individual cone mosaics
+and on the combined mosaics.
+
+For the vast majority of spectra, it is sufficient to specify
+a source as either a set of blackbodies or as a set of gaussians.
+Usually a single blackbody is sufficiently specified
+as an amplitude and a temperature (two parameters).
+Usually a single gaussian is sufficiently specified
+as an amplitude, a peak &lambda;, and a width (three parameters).
+
+Synthetic images are produced by summing wave equations
+and squaring the result, so it is convenient to use
+the square root of peak intensity as the amplitude.
+An image can be fully specified with spectral precision
+from pixels composed from their spectral components.
+
+Pixels locations may be either specified on pixel groups
+randomly scattered over the image, or as raster images where
+the location is implied by its position in the raster line set.
+
+The former permits a full lower-quality image to be delivered early
+with improving fidelity as more pixels arrive.
+The latter requires full delivery of all pixels before
+the full image may be seen.
+In the former case, a spectral specification is given
+followed by a sequence of (x,y) pixel coordinates.
+A 4096x4096 pixel image can use 12 bits per dimension
+or 3 bytes per pixel.
+First priority of presentation should be given to
+generating a neutral background.
+Second priority should be given to larger differences across boundaries.
+Last priority should be given to field filling operations.
+
+Digital cameras are unable to produce images of this type
+since they are restricted to sampling 3 narrow spectral bands.
+Older photographs are also unable to produce these images
+for similar reasons.
+The only feasible manner of production of test images
+suitable for analysis of vision is synthesis.
+
+As will be shown, acceptable synthetic images can be produced
+and their effects on retinal photreceptors properly modelled.

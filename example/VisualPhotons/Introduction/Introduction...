@@ -2,10 +2,67 @@
 ___Whither and whence visual photons
 needs must uncertain be
 yet by lawful pattern ruled.
+Photons are produced, scattered, reflected, refracted, diffracted and,
+finally, incident and aborbed by the retina in "bleaching" events.
+Daylight photons result from solar blackbody emissions
+with notches due to atmospheric absorption.
+Surviving photons are scattered by the atmosphere,
+reflect off objects, refract through the cornea, diffract through the pupil,
+and are absorbed by various species of photoreceptors.
+Each of these processes contribute to spectral transforms.
+
+___In the study of perception, there appear to be laws governing invariance.
+Contrast invariance and color invariance are two popular study subjects.
+It is not possible to discuss these invariants without discussing the
+quantitative absorption of photons by the retina from a typical scene.
+Most modern synthesis of images depends on the use of RGB emission
+usually produced by LEDs and for purposes of improving robotic vision.
+Notwithstanding the LMS retinal cone species having similar spectral peaks,
+the images produced for use with an achromatic lens
+and with an Airy disk smaller than a pixel for a digital camera
+are not suitable for analyzing images produced by the chromatic natural lens
+and Airy disk always larger than the human equivalent of pixel.
+The subject of this paper is the production ane encoding of synthetic images
+suitable for analysis of human visual invariants.
+
+___Two transforms dominate the formation of images on the retina;
+corneal refraction and pupillary diffraction.
+Both have &lambda; (wavelength) dependence.
+Corneal refraction is modelled by a \(1/\lambda\) proportional affine transform
+where short wavelengths are expanded more than long wavelengths.
+Pupillary diffraction is modelled by convolution with a
+\(\lambda\) proportional Airy kernel;
+where the kernel is
+smaller for short wavelengths and larger for long wavelengths.
+In other words, for a white object on a black background you will oberve
+a blue tinge ringing the object as seen through a magnifying glass and
+a red tinge ringing it as seen in the Airy disk from a pinhole.
+
+___Both of these transforms apply to mathematical models of images
+formed from photons counting in the millions or billions.
+The affine transform from refraction is modelled simply enough.
+Analysis of diffraction and synthesis of suitable diffraction images
+from very low to very high photon counts will be
+the primary focus of this paper.
+Images produced and encoded using these methods
+will enable further research into how retinal processing achieves invariance.
+
+==== Diffraction and Low Photon Counts
+
+___When a very large number of photons from a point source
+pass through an aperture and then fall on a surface
+they accumulate in a diffraction pattern called an Airy pattern `figure.Airy`.
+This intensity pattern is the square of
+the photon wave function `equation.wave`.
+Photon densities are properly synthesized by summing the wave equations
+for all points over all wavelengths and squaring the result.
+`comment.ignore|ignore|
+Through the principle of superposition,
 Photons do not interact.
 As individual photons from a point source accumulate into an image
 they tend to accumulate as an Airy pattern.
 The accumulation has the character of a wave.
+`
 
 ___This pattern of intensity is ruled by `equation.Airy`.
 This formula represents the idealized continuous distribution
@@ -48,7 +105,7 @@ and methods for producing suitable sensed images for
 analyzing how the sensory data for vision is presented.
 Even in `figure.2onretina`, enough photons are present
 to give the image a seemingly continuous character.
-^^^^
+^^^^^
 <table align="left"><tr><td>
 `figure.1photon|<br />1 photon|Airy.kernel.11.0000001.gif`
 `figure.10photon|<br />10 photons|Airy.kernel.11.0000010.gif`
@@ -80,37 +137,48 @@ when point sources are eccentric from the center,
 different wavelength photons refract and diffract
 to different centers aligned radially from the center;
 yet the perception of a polychromatic point is of a single point source.
-^^^^
-`figure.blackbody|Blackbody radiation|
+
+==== Photons, Spectra, and Blackbodies
+
+`figure.solar|Solar Spectrum (wikimedia commons)|
+{width="256" height="256"}
+Solar_Spectrum.png`
+`figure.blackbody|Blackbody radiation
+(visible wavelengths are within the white region of the figure.
+The peak absorption of typical human photoreceptors are shown as
+colored vertical lines)|
 {width="256" height="256"}Blackbody.png`
-`figure.incandescent|Light bulb|
+`figure.incandescent|Light bulb
+(at a lower blackbody temperature of 2800K,
+longer wavelengths dominate unlike sunlight
+where shorter wavelengths dominate)
+|
 {width="256" height="256"}Incandescent.png`
-___Natural lighting does not divide photons into
-the 3 or 4 energy bands discussed in the literature.
-Spectra are considered continuous in that
+___Natural lighting is not divided into photons having
+3 or 4 energy bands discussed in robotic vision literature.
+Daylight spectra are considered continuous in that
 no energies or wavelengths are forbidden.
 Typically, ambient light is broad spectrum as in `figure.blackbody`.
-Visible wavelengths are within the white region of the figure.
-The peak absorption of typical human photoreceptors are shown as
-colored vertical lines.
 Sunlight resembles the 6500K curve with atmospheric absorption.
 An incandescent lightbulb peak temperature is 3695K which yields
 a slope that appears to rise monotonically from the blue end to the red end.
 The spectrum of `figure.incandescent` is
 typical for a light bulb at 2800K.
-When walking from sunlight into incandescent light
+When moving from sunlight into incandescent light
 one does not perceive a change in colors.
-The change of spectrum does not change the colors seen.
+The change of spectrum does not change the colors seen
+but the size, shape, and spectral composition
+have changed dramatically by the change in light source.
 
 `comment.url|blackbody|
 https://code.google.com/p/agpy/source/browse/trunk/agpy/blackbody.py`
 
 `def.I_0|Peak intensity|I<sub>0</sub>`
-___The two spectra `figure.blackbody` and `figure.incandescent`
+___The two spectra of `figure.blackbody` and `figure.incandescent`
 were produced with `equation.blackbody`.
 The theory of this curve is well explored.
 Blackbody radiation may be specified with two parameters,
-T (degrees Kelvin).
+T (degrees Kelvin), and visual angle (or amplitude).
 `equation.blackbody2|Blackbody equation in &lambda;|
 I(\lambda,T) =
 \frac{2 h c^3}{\lambda^5}\frac{1}{exp{\left(\frac{h c}{\lambda k T}\right)}-1}
@@ -138,7 +206,6 @@ Gauss(x) = a~exp{\left(-\frac{\left(x-b\right)^2}{2c^2}\right)}
 {width="256" height="256"}Receptor.png`
 `figure.camera|Camera pixel absorption|
 {width="256" height="256"}Camera.png`
-
 ___The typical trichromat human has three cone photoreceptors L, M, and S.
 A fourth, rod photoreceptor, is labelled X in `figure.receptor`.
 As can be seen, all human photoreceptors
@@ -162,6 +229,7 @@ the presence of long wavelength photons.
 This is called color constancy and is what was described
 for perception under `figure.blackbody` and `figure.incandescent`.
 
+^^^^^
 `equation.Airy|Airy equation|I = I_0 \left({2 J_1(u) \over u}\right)^2`
 `equation.uparam|Airy parameter|u = {2 \pi a q \over \lambda R}
 where:
@@ -171,7 +239,7 @@ q = focal plane offset
 &lambda; = photon wavelength
 R = distance from aperture to focal plane
 `
-Wave superposition rules when
+___Wave superposition rules when
 multiple points are being projected onto an image plane.
 The waves from all the points are summed
 and the result is squared to yield the intensity map (image).
@@ -201,6 +269,7 @@ being absorbed within a specific tile in a grid of a tiled surface
 is calculated by integrating the infinitesimal probabilities over the tile.
 
 ^^^^
+^^^^^
 === Retinal Photoreceptor Species Mosaic
 `figure.mosaicL|Mosaic L cones|{width="241" height="241"}speciesL.png`
 `figure.mosaicM|Mosaic M cones|{width="241" height="241"}speciesM.png`
@@ -240,8 +309,8 @@ This will be treated in a later paper focused on processing
 based on these effective images and the shapes of neurons.
 Here, it will be shown what information is present
 when full-spectrum scenes cause absorption events in the retina.
-
-Here is PHP code which generates the receptor mosaic images shown here.
+^^^^^
+___Here is PHP code which generates the receptor mosaic images shown here.
 `listing.species|Generating the mosaic|species.php`
 
 `reference.LettvinColorsOfThings|The Colors Of Things|

@@ -107,6 +107,7 @@ Even in `figure.2onretina`, enough photons are present
 to give the image a seemingly continuous character.
 ^^^^^
 ==== Low Photon Count Diffraction
+
 <table align="left"><tr><td>
 `figure.1photon|<br />1 photon|Airy.kernel.11.0000001.gif`
 `figure.10photon|<br />10 photons|Airy.kernel.11.0000010.gif`
@@ -118,6 +119,13 @@ to give the image a seemingly continuous character.
 `figure.300photon|<br />300 photons|Airy.kernel.11.0000300.gif`
 `figure.3000photon|<br />3000 photons|Airy.kernel.11.0003000.gif`
 </td></tr></table>
+___Suppose one views a 0.1mm emerald
+on a black velvet background pad
+on a brightly lit white counter.
+The photon count contributed by the emerald is very low.
+The observer's pupil is constricted by high ambient light
+and the act of scrutinizing for detail.
+
 ___When photon flux is low, the Airy pattern becomes
 more difficult to discern as can be seen in the models
 of accumulations of single monochromatic photon events
@@ -125,8 +133,8 @@ in `figure.1photon` to `figure.3000photon`.
 
 ___As can be seen, even at 3000 photons from a point source
 the Airy pattern is yet to assume the continuous character
-achieved at much higher photon fluxes experienced in daylight
-or even low incandescent lighting.
+achieved at much higher photon fluxes experienced
+when observing less carefully constructed scenes in bright light.
 
 ___Vision still works fairly well at low light levels
 so whatever explanation is made for vision

@@ -17,13 +17,10 @@ function figure($the = []) {
     if (isset($code)) {
         $att = attributes($code);
         $b64 = base64_encode(file_get_contents(trim($code)));
-        if (trim($label) == '#') {
-            $img = img("", $b64);
-        } else {
-            $img = img("alt=\"{$label}\" {$att}", $b64);
-            $img = resource('figure', $the, $img);
-        }
+        $img = img("alt=\"{$label}\" {$att}", $b64);
+        if ($label == '#')
+            return $img;
     }
-    return $img;
+    return resource('figure', $the, $img);
 }
 ?>

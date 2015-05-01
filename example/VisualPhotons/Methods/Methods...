@@ -4,13 +4,27 @@ ___Currently, there is no popular stored image format capable of
 storing a full spectrum image of the sort needed for this analysis.
 It is possible to specify a format for use in this paper.
 The format for a given pixel may be given as a list of specifications.
-Each specification has 1 bit to identify the coefficients as either
-blackbody `figure.blackbody` `equation.blackbody`
-or gaussian `equation.gaussian2` (a variation on `equation.gaussian`).
+Each specification has 2 bits to identify the coefficients as either
+blackbody `figure.blackbody` `equation.blackbody`,
+gaussian `equation.gaussian2` (a variation on `equation.gaussian`),
+polynomial (complex curve-fit), or absolute (data points for a curve fit).
 If identified as blackbody,
 a pair of (I<sub>0</sub>,T) coefficients or (a,b) follows. 
 If identified as gaussian, an (\(I_0,\lambda_{peak},RMSwidth\))
 or (a,b,c) coefficient triple follows. 
+If identified as polynomial, a vector (a,b,c,...) follows where
+the coefficient sign bit for 'b' is on to distinguish it from blackbody.
+If identified as absolute, 
+
+Historically,
+images are represented by 3 color values (R, G, B) for each pixel.
+For efficiency reasons, both in storage and display time,
+this encoding has been dominant.
+With the availability of gpgpu processing
+display time is no longer impacted significantly by encoding complexity
+or by calculated rendering complexity.
+Data pathways in DMA, bus width, and bus speed have improved,
+eliminating encoding size bottlenecks.
 
 `equation.gaussian2|Gaussian function in &lambda;|
 I(\lambda) =
@@ -19,8 +33,19 @@ I_0~exp{\left(
 \right)^2}{2 RMSwidth^2}\right)}
 `
 
+`encoding?SPECIFICATION:
+first byte, two high bits encode N-byte datawidth (1,2,3,4 bytes) for (x,y),
+next two high bits encode spectral encoding type (A,B,G,P),
+leaving 4 TBD bits.
+2nd byte gives length of coefficient stream from 1-256.
+Next two N byte fields specify (x,y) of pixel in image (0,0) in center.
+Next 16 bits gives half-float amplitude of wave responsible for intensity.
+Subsequent byte pairs are aligned half-float coefficients.
+Spectrum is given as normalized (i.e. sum(coeff)/count(coeff) = 1).
+`
+
 ___The spectrum of a pixel may be fully described as a list of components:
-(B:((a1,b1),(a2,b2)...), G:((a3,b3,c3),(a4,b4,c4)...)).
+(B:((a1,b1),(a2,b2)...), G:((a3,b3,c3),(a4,b4,c4)...), P:((an,bn,...))).
 Each coefficient is a floating point number limited to a small range.
 Using the "half" float (16 bits), it is possible for
 blackbody specifications to occupy 32 bits and gaussian to occupy 48 bits.
@@ -31,7 +56,7 @@ when the first coefficient is negative.
 Here is a fanciful pixel spectrum: (A1,B1,a2,b2,c2,a3,b3,c3,A4,B4).
 In most cases, only one or two components will be used.
 In no case shown in this paper will blackbody and gaussian components be mixed.
-^^^^^
+
 `figure.whitebody|White Body Spectrum|
 {width="256" height="256"}WhiteBody.png`
 `figure.LEDs|RGB LED Spectrum|
@@ -51,7 +76,7 @@ The b coefficient is given in nanometers.
 In this figure, each component is given by a single gaussian.
 ^^^
 (\(I_R\),610,0.18e-7,\(I_G\),550,0.18e-7,\(I_B\),450,1.7e-7,0.18e-7)
-
+^^^^^
 ___Typically, images are laid out as either raster sequences of pixels
 or as vector graphics.  Another alternative, used here,
 is to give the coordinates of a pixel at which a spectrum is expressed.
@@ -93,7 +118,7 @@ an image composed of photons from point sources may actually be
 far smaller than with traditional RGB digital images yet
 capable of expressing the full spectra required for analyzing
 vision in natural light settings.
-
+-----
 === Photon probability chain
 
 Probabilities for photon capture are products of probabilities

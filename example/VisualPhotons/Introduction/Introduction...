@@ -1,41 +1,36 @@
-`figure.Airy|Airy pattern|RGB.Airy.small.png`
+`figure.Airy|Airy pattern|{width="378" height="378"}RGB.Airy.small.png`
 ___Whither and whence visual photons
-needs must uncertain be
-yet by lawful pattern ruled.
-Photons are produced, scattered, reflected, refracted, diffracted and,
-finally, incident and aborbed by the retina in "bleaching" events.
-Daylight photons result from solar blackbody emissions
-with notches due to atmospheric absorption.
-Surviving photons are scattered by the atmosphere,
-reflect off objects, refract through the cornea, diffract through the pupil,
-and are absorbed by various species of photoreceptors.
+needs must uncertain be yet by lawful pattern ruled.
+Photons are produced, scattered, reflected, refracted, diffracted,
+incident, and aborbed by a retina in "bleaching" events.
+Daylight photons result from solar blackbody emission
+with notches from atmospheric absorption.
+Surviving photons are scattered by atmosphere,
+reflect off objects, refract through a cornea, diffract through a pupil,
+and are absorbed by plural species of photoreceptors.
 Each of these processes contribute to spectral transforms.
 
-___In the study of perception, there appear to be laws governing invariance.
-Contrast invariance and color invariance are two popular study subjects.
-It is not possible to discuss these invariants without discussing the
-quantitative absorption of photons by the retina from a typical scene.
-Most modern synthesis of images depends on the use of RGB emission
-usually produced by LEDs and for purposes of improving robotic vision.
-Notwithstanding the LMS retinal cone species having similar spectral peaks,
-the images produced for use with an achromatic lens
-and with an Airy disk smaller than a pixel for a digital camera
-are not suitable for analyzing images produced by the chromatic natural lens
-and Airy disk always larger than the human equivalent of pixel.
-The subject of this paper is the production ane encoding of synthetic images
+___Laws governing perceptual invariants such as contrast and color invariance
+must arise from quantitative retinal photon absorption differentials
+from a typical scene.
+Historically, image synthesis depends on use of
+RGB components usually produced by LEDs.
+Notwithstanding LMS retinal cone species having similar spectral peaks,
+images produced as if by a digital camera achromatic lens
+with an Airy disk smaller than one pixel
+are not suitable for analyzing images produced by a chromatic natural lens
+and Airy disk always larger than a human photoreceptor.
+The subject of this paper is production an encoding of synthetic images
 suitable for analysis of human visual invariants.
 
-___Two transforms dominate the formation of images on the retina;
+___Two transforms dominate retinal image formation;
 corneal refraction and pupillary diffraction.
-Both have &lambda; (wavelength) dependence.
-Corneal refraction is modelled by a \(1/\lambda\) proportional affine transform
+Corneal refraction is modelled by an affine expansion &propto; \(1/\lambda\)
 where short wavelengths are expanded more than long wavelengths.
-Pupillary diffraction is modelled by convolution with a
-\(\lambda\) proportional Airy kernel;
-where the kernel is
-smaller for short wavelengths and larger for long wavelengths.
-In other words, for a white object on a black background you will oberve
-a blue tinge ringing the object as seen through a magnifying glass and
+Pupillary diffraction is modelled by an Airy kernel convolution
+where the kernel size is &propto; \(\lambda\).
+In other words, for a white object on a black background
+oberve a blue tinge ringing the object as seen through a magnifying glass and
 a red tinge ringing it as seen in the Airy disk from a pinhole.
 
 ___Both of these transforms apply to mathematical models of images
@@ -64,26 +59,26 @@ they tend to accumulate as an Airy pattern.
 The accumulation has the character of a wave.
 `
 
-___This pattern of intensity is ruled by `equation.Airy`.
-This formula represents the idealized continuous distribution
+___This intensity map is ruled by `equation.Airy`.
+This formula calculates idealized continuous distribution
 from which deviation is unmeasurable at high photon counts.
 Discrete photons do not form a continuous set.
-Nor do sensors arranged along a grid in a focal plane in an eye or camera.
-The zoomed "pixels" in `figure.Airy` illustrate this grid
-for billions of RGB source photons seen for a centrally located point source.
+Nor does a grid of sensors in a focal plane in an eye or camera.
+The zoomed "pixels" in `figure.Airy` illustrate a grid
+for billions of RGB source photons for a centrally located point source.
 
 ___Close examination reveals that different wavelengths
-contribute differentially to the pattern at different radii.
+contribute differentially to a pattern at different radii.
 Photographic and visual colors are typically thought to operate using RGB.
-The names R (red), G (green), and B (blue), as wavelengths,
+The names (R)ed, (G)reen, and (B)lue, as wavelengths,
 are typically thought to be related to color perception.
 In fact, color perception is independent of wavelength
 `reference.LettvinColorsOfThings`.
-The scientific labelling for RGB in retinal photoreceptor absorption
+Scientific labelling for RGB in retinal photoreceptor absorption
 is LMS for Long, Medium, and Short.
 However, since photography and displays use RGB,
 they will be used interchangeably.
-
+^^^^^
 `figure.2points|<br />2 white points|
 {width="128" height="128"}
 hyperacuity0.original.png`
@@ -91,21 +86,21 @@ hyperacuity0.original.png`
 {width="128" height="128"}
 hyperacuity1.saturate.png`
 ___The retinal image of two white RGB point sources
-incident on the human retina after traversing a 1mm pupil
+incident on a human retina after traversing a 1mm pupil
 appears as an inchoate blur incapable of being resolved
 by Rayleigh criterion, Sparrow limit, or even
-traditional use of Fourier transform coupled with Nyquist sampling.
+Nyquist sampling limit in a Fourier transform of intensity.
 
-___The wavelength dependence in `figure.2onretina`
+___Wavelength dependence in `figure.2onretina`
 is even more apparent than for `figure.Airy`.
 This is the character of image for narrow band RGB illumination.
 This paper will explore the problem of forming
 retinal equivalent incident photons using broadband illumination
 and methods for producing suitable sensed images for
-analyzing how the sensory data for vision is presented.
+analyzing how sensory data for vision is presented.
 Even in `figure.2onretina`, enough photons are present
 to give the image a seemingly continuous character.
-^^^^^
+
 ==== Low Photon Count Diffraction
 
 <table align="left"><tr><td>
@@ -143,11 +138,10 @@ to good enough quality internal reconstructions of the scene.
 
 ___It is important to note that,
 when point sources are eccentric from the center,
-different wavelength photons refract and diffract
-to different centers aligned radially from the center;
+different wavelength photons refract and diffract to
+different centers aligned radially from the center;
 yet the perception of a polychromatic point is of a single point source.
 
-^^^^^
 ==== Photons, Spectra, and Blackbodies
 
 `figure.solar|Solar Spectrum (wikimedia commons)|
@@ -179,16 +173,14 @@ one does not perceive a change in colors.
 The change of spectrum does not change the colors seen
 but the size, shape, and spectral composition
 have changed dramatically by the change in light source.
-
+^^^^^
 `comment.url|blackbody|
 https://code.google.com/p/agpy/source/browse/trunk/agpy/blackbody.py`
 
-^^^^^
 `def.I_0|Peak intensity|I<sub>0</sub>`
 ___The two spectra of `figure.blackbody` and `figure.incandescent`
 were produced with `equation.blackbody`.
-The theory of this curve is well explored.
-Blackbody radiation may be specified with two parameters,
+Blackbody radiation is specified with two parameters,
 T (degrees Kelvin), and visual angle (or amplitude).
 `equation.blackbody2|Blackbody equation in &lambda;|
 I(\lambda,T) =
@@ -206,40 +198,37 @@ T=body temperature in Kelvin
 `
 ___Other spectra like `figure.receptor` and `figure.camera`
 are generated using short lists of coefficient triples (a,b,c).
-The curves in both of these figures took one or two triples each.
+Curves in both figures took one or two triples each.
 This equation is used for convenient curve-fitting.
 `equation.gaussian|Gaussian function|
 Gauss(x) = a~exp{\left(-\frac{\left(x-b\right)^2}{2c^2}\right)}
 `
 
-^^^^^
 `figure.receptor|Retinal receptor absorption|
 {width="256" height="256"}Receptor.png`
 `figure.camera|Camera pixel absorption|
 {width="256" height="256"}Camera.png`
-___The typical trichromat human has three cone photoreceptors L, M, and S.
-A fourth, rod photoreceptor, is labelled X in `figure.receptor`.
-As can be seen, all human photoreceptors
+___A typical trichromat human has three cone photoreceptors L, M, and S
+and one rod photoreceptor (X in `figure.receptor`).
+Human photoreceptors
 absorb photons having short wavelengths.
-Absorption of photons at the longer end have sharp relative cutoffs
-such that the S cone absorbs almost no photons at wavelengths above ~550nm.
-The M cone cuts off at ~625nm, and L cone cuts off at ~710nm.
-Note the curious increase of L and M cone absorption at shorter wavelengths.
-All this indicates that the wavelengths in a scene are not
+Absorptions of long wavelength photons have sharp relative cutoffs.
+S cones absorb almost no photons at wavelengths above ~550nm.
+M cones cut off at ~625nm, and L cone cuts off at ~710nm.
+Note a curious increase of L and M cone absorption at shorter wavelengths.
+All this indicates that wavelengths in a scene are not
 as sharply divided into color planes
 as is assumed in standard image processing.
 
-___A critical function of vision is to identify
-readiness of a resource by its color.
-Regardless of the ambient light, a ripe apple should look red.
+___Vision identifies readiness of a resource by its color.
+Regardless of ambient light, a ripe apple should look red.
 In fact, it does when viewed under a blue sky, a green forest canopy,
 a red sunset, or by sodium light having only
 two yellow and one blue spectral line.
-The redness of the apple does not depend on
-the presence of long wavelength photons.
-This is called color constancy and is what was described
+Redness of an apple does not depend on
+presence of long wavelength photons.
+This is color constancy as described
 for perception under `figure.blackbody` and `figure.incandescent`.
-
 ^^^^^
 `equation.Airy|Airy equation|I = I_0 \left({2 J_1(u) \over u}\right)^2`
 `equation.uparam|Airy parameter|u = {2 \pi a q \over \lambda R}
@@ -250,15 +239,15 @@ q = focal plane offset
 &lambda; = photon wavelength
 R = distance from aperture to focal plane
 `
-___Wave superposition rules when
-multiple points are being projected onto an image plane.
-The waves from all the points are summed
-and the result is squared to yield the intensity map (image).
 `equation.wave|Airy wave equation|A = A_0 {2 J_1(u) \over u}
 where:
 A_0 = \sqrt{I_0}
 `
-^^^^
+___Wave superposition rules when
+multiple points are being projected onto an image plane.
+Waves from all points are summed
+and the result is squared to yield an intensity map (image).
+
 `gnuplot.Airy|Airy(x,y)|
 {width="256" height="256"}
 radius(a,x,y)=pi*sqrt((a*x)**2+(a*y)**2);
@@ -272,13 +261,11 @@ set isosamples 101,101; set pm3d at b; splot Airy(1,x,y);
 ___The conditions under which this occurs are special.
 An achromatic lens is required.
 
-
 ___The straight lines predicted by optics between this origin
 identify the center of a probability distribution at the destination.
 The relative probability of a photon of specific energy from a specific source
 being absorbed within a specific tile in a grid of a tiled surface
 is calculated by integrating the infinitesimal probabilities over the tile.
-
 ^^^^^
 ==== Retinal Photoreceptor Species Mosaic
 `figure.mosaicL|Mosaic L cones|{width="241" height="241"}speciesL.png`
@@ -288,40 +275,56 @@ is calculated by integrating the infinitesimal probabilities over the tile.
 `make.mosaic|Create the model species mosaic|php species.php`
 `figure.mosaic|Species Mosaic|{width="241" height="241"}speciesLMS.png`
 
-___There are four photoreceptor species in the typical trichromat human eye.
-Variations in species presence and distribution are found in individuals.
-These images are fictional characterizations of what is found in vivo.
-The images are produced on a rectangular grid but, in vivo,
-the grid is more similar to a hexagonal grid, but nowhere near reliably.
-These distributions are largely consistent with published data:
-such as the site:
-^^^
-http://www.cvrl.org/database/text/intros/introdens.htm
+`reference.introdens|receptor densities|
+author  = Christine A. Curcio
+etal    = Christine A. Curcio and Kenneth R. Sloan
+journal = Visual Neuroscience
+volume  = 9
+number  = 02
+year    = 1992
+month   = August
+pages   = 169-180
+URL     = http://www.cvrl.org/database/text/intros/introdens.htm`
+`reference.SconeDistribution|Seeing with S Cones|
+author  = David J. Calkins
+title   = Seeing with S Cones
+journal = Progress in Retinal and Eye Research
+volume  = 20
+number  = 3
+pages   = 255-287
+year    = 2001
+`
+___Here is PHP code which generates the receptor mosaic images shown here.
+`listing.species|Generating the mosaic|{align="right"}species.php`
+
+___A human trichromat has four photoreceptor species
+whose proportion and distribution vary in individuals
+(`reference.introdens`, `reference.SconeDistribution`).
+Our synthetic images
+are consistent with in vivo data but use a rectangular grid.
+
+___Either L cones or M cones dominate in a macula.
+S cones don't appear within 100&micro;M of center and
+are far fewer in number.
+Rods are absent in these figures
+only populating a retina in the outer macula and past
+where they increase to 100% outside the macula.
+Note that distribution has no reliable pattern and is effectively random.
+^^^^
+`table.photoreceptors` represents species in a typical trichromat human.
 `table.photoreceptors|Photoreceptor Species|
 L|photoreceptors (cones shown as red)|~566nm peak absorption
 M|photoreceptors (cones shown as green)|~533nm peak absorption
 I|photoreceptors (rods shown as cyan)|~498nm peak absorption
 S|photoreceptors (cones shown as blue)|~433nm peak absorption
 `
-
-___L cones typically dominate in the macula but M cone dominance is not rare.
-S cones do not appear within 100&micro;M of center and are far fewer in number.
-Rods are not present in these figures
-and only begin to populate the retina in the outer part of the macula
-where they increase to 100% outside the macula.
-`table.photoreceptors` represents the species in the typical trichromat human.
-Note that the distribution has no reliable pattern and is effectively random.
-
-___As is shown in `figure.mosaicL` to `figure.mosaicS`,
-were the species to be treated as image planes,
-the effective image for each plane would have lacunae.
-This will be treated in a later paper focused on processing
-based on these effective images and the shapes of neurons.
-Here, it will be shown what information is present
-when full-spectrum scenes cause absorption events in the retina.
 ^^^^^
-___Here is PHP code which generates the receptor mosaic images shown here.
-`listing.species|Generating the mosaic|species.php`
+___As shown in `figure.mosaicL`-`figure.mosaicS`,
+effective images for color planes have lacunae.
+A future paper explores processing
+based on synthetic images and shapes of neurons.
+Here we explore information content
+when full-spectrum scenes cause retinal absorption events.
 
 `reference.LettvinColorsOfThings|The Colors Of Things|
 author        = Jerome Y. Lettvin et al
@@ -333,8 +336,13 @@ year          = 1986
 volume        = 255.3
 pages         = 84-92
 `
-^^^^^
+
 ==== Spectral Encoding Constraints
+A new method of encoding spectra for a given retinal pixel is needed.
+The encoding must support calculation of relative probabilities of absorption.
+It must support expression of blackbody radiation, monochromatic source,
+and polynomial spectral shapes.
+
 Retinal photoreceptors respond to photons across the entire visual spectrum.
 To determine what a retinal response is to a scene lit by sunlight
 it is necessary to compute the dot product of
@@ -382,3 +390,5 @@ suitable for analysis of vision is synthesis.
 
 As will be shown, acceptable synthetic images can be produced
 and their effects on retinal photreceptors properly modelled.
+
+^^^^^

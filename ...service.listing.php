@@ -17,6 +17,7 @@ function listing($the =
     if (is_array($the)) {
         extract($the);
         if (!isset($code)) return "TODO[nocode.{$id}]";
+        $explicit = attributes($code);
         $att = [
             'cellspacing' => '5',
             'border' => '1',
@@ -25,6 +26,19 @@ function listing($the =
             'hspace' => '10',
             'vspace' => '10',
         ];
+        if ($explicit) {
+            $changes = explode(' ', $explicit);
+            foreach ($changes as $change) {
+                if (!$change) continue;
+                $pair = explode('=', $change);
+                if (count($pair) == 2) {
+                    list($key, $val) = $pair;
+                    $att[$key] = substr($val, 1, -1);
+                } else {
+                    TODO("Fix unpaired k=v in '{$change}'");
+                }
+            }
+        }
         $preno++;
         $prearray[$id] = $preno;
         if (is_readable($code)) $code = file_get_contents($code);

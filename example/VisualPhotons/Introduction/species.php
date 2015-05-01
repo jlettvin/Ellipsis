@@ -8,7 +8,7 @@ function species() {
     list(     $X , $Y ) = array_fill(0, 2, range(-$r0, +$r0));
     list($P, $M, $D, $rs, $Rmax) = [[], 255, count($X), 100, radius($x0, $y0)];
     $image = ['L' => ''      , 'M' => ''      , 'S' => ''      , 'LMS' => '' ];
-    $count = ['L' => 650     , 'M' => 340     , 'S' => 10      , 'I'   => 0  ];
+    $count = ['L' => 600     , 'M' => 300     , 'S' => 100     , 'I'   => 0  ];
     $cones = ['L' => [$M,0,0], 'M' => [0,$M,0], 'S' => [0,0,$M]              ];
     foreach (array_keys($image) as $k)
         ${'im'.$k} = $image[$k] = @imagecreatetruecolor($D, $D)

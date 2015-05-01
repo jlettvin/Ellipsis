@@ -19,7 +19,8 @@ function table(&$the) {
     if (isset($code)) {
         $content = array_map('trim', explode(PHP_EOL, $code));
         if (count($content)) {
-            $result .= "<table><caption>{$label}</caption>";
+            $result .= "<table>";
+            //$result .= "<caption>{$label}</caption>";
             foreach ($content as $line) {
                 $result .= "<tr>";
                 foreach (array_map('trim', explode('|', $line)) as $cell)

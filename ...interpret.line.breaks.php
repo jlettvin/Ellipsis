@@ -2,8 +2,7 @@
 function interpret_line_breaks($line) {
     $line = str_replace(
         "^^^^^",
-        '<br clear="all" /><br />'.
-        '<div style="page-break-after:always"></div>',
+        page_break(horizontal_rule("red")),
         $line);
     $line = str_replace(
         "^^^^",
@@ -11,9 +10,7 @@ function interpret_line_breaks($line) {
     $line = str_replace(
         "^^^",
         '<br />', $line);
-    $line = str_replace(
-        "-----",
-        '<hr />', $line);
+    $line = str_replace("-----", horizontal_rule("black"), $line);
     return $line;
 }
 ?>

@@ -76,6 +76,15 @@ The b coefficient is given in nanometers.
 In this figure, each component is given by a single gaussian.
 ^^^
 (\(I_R\),610,0.18e-7,\(I_G\),550,0.18e-7,\(I_B\),450,1.7e-7,0.18e-7)
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
 ^^^^^
 ___Typically, images are laid out as either raster sequences of pixels
 or as vector graphics.  Another alternative, used here,
@@ -167,6 +176,26 @@ Since the final step in the chain is multiplication by
 the absorption spectrum of the photoreceptor,
 the apparent image incident on each species of receptor
 differs substantially from that for other species.
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
 ^^^^^
 === RGB test pattern
 
@@ -174,3 +203,52 @@ differs substantially from that for other species.
 ^^^^
 `figure.121original|Another RGB pattern|121x121.png`
 `figure.121retinal|As incident on retina|121x121.png.Human.refract.Airy.png`
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^^^

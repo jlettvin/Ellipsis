@@ -78,6 +78,10 @@ Scientific labelling for RGB in retinal photoreceptor absorption
 is LMS for Long, Medium, and Short.
 However, since photography and displays use RGB,
 they will be used interchangeably.
+^^^
+^^^
+^^^
+^^^
 ^^^^^
 `figure.2points|<br />2 white points|
 {width="128" height="128"}
@@ -173,6 +177,8 @@ one does not perceive a change in colors.
 The change of spectrum does not change the colors seen
 but the size, shape, and spectral composition
 have changed dramatically by the change in light source.
+^^^
+^^^
 ^^^^^
 `comment.url|blackbody|
 https://code.google.com/p/agpy/source/browse/trunk/agpy/blackbody.py`
@@ -229,6 +235,27 @@ Redness of an apple does not depend on
 presence of long wavelength photons.
 This is color constancy as described
 for perception under `figure.blackbody` and `figure.incandescent`.
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
 ^^^^^
 `equation.Airy|Airy equation|I = I_0 \left({2 J_1(u) \over u}\right)^2`
 `equation.uparam|Airy parameter|u = {2 \pi a q \over \lambda R}
@@ -266,6 +293,38 @@ identify the center of a probability distribution at the destination.
 The relative probability of a photon of specific energy from a specific source
 being absorbed within a specific tile in a grid of a tiled surface
 is calculated by integrating the infinitesimal probabilities over the tile.
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
 ^^^^^
 ==== Retinal Photoreceptor Species Mosaic
 `figure.mosaicL|Mosaic L cones|{width="241" height="241"}speciesL.png`
@@ -338,12 +397,12 @@ pages         = 84-92
 `
 
 ==== Spectral Encoding Constraints
-A new method of encoding spectra for a given retinal pixel is needed.
+___A new method of encoding spectra for a given retinal pixel is needed.
 The encoding must support calculation of relative probabilities of absorption.
 It must support expression of blackbody radiation, monochromatic source,
 and polynomial spectral shapes.
 
-Retinal photoreceptors respond to photons across the entire visual spectrum.
+___Retinal photoreceptors respond to photons across the entire visual spectrum.
 To determine what a retinal response is to a scene lit by sunlight
 it is necessary to compute the dot product of
 the spectrum presented to a photoreceptor with its absorption spectrum.
@@ -351,24 +410,24 @@ The point of this paper is to compute that dot product and
 show the effect this has on each of the individual cone mosaics
 and on the combined mosaics.
 
-For the vast majority of spectra, it is sufficient to specify
+___For the vast majority of spectra, it is sufficient to specify
 a source as either a set of blackbodies or as a set of gaussians.
 Usually a single blackbody is sufficiently specified
 as an amplitude and a temperature (two parameters).
 Usually a single gaussian is sufficiently specified
 as an amplitude, a peak &lambda;, and a width (three parameters).
 
-Synthetic images are produced by summing wave equations
+___Synthetic images are produced by summing wave equations
 and squaring the result, so it is convenient to use
 the square root of peak intensity as the amplitude.
 An image can be fully specified with spectral precision
 from pixels composed from their spectral components.
 
-Pixels locations may be either specified on pixel groups
+___Pixels locations may be either specified on pixel groups
 randomly scattered over the image, or as raster images where
 the location is implied by its position in the raster line set.
 
-The former permits a full lower-quality image to be delivered early
+___The former permits a full lower-quality image to be delivered early
 with improving fidelity as more pixels arrive.
 The latter requires full delivery of all pixels before
 the full image may be seen.
@@ -381,14 +440,43 @@ generating a neutral background.
 Second priority should be given to larger differences across boundaries.
 Last priority should be given to field filling operations.
 
-Digital cameras are unable to produce images of this type
+___Digital cameras are unable to produce images of this type
 since they are restricted to sampling 3 narrow spectral bands.
 Older photographs are also unable to produce these images
 for similar reasons.
 The only feasible manner of production of test images
 suitable for analysis of vision is synthesis.
 
-As will be shown, acceptable synthetic images can be produced
+___As will be shown, acceptable synthetic images can be produced
 and their effects on retinal photreceptors properly modelled.
 
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
 ^^^^^

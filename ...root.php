@@ -64,6 +64,9 @@ function root($argv=['www']) {
              'top'=>(count(debug_backtrace()) == 0),
              'web'=>(php_sapi_name()=='cli-server'),                        ]);
 
+    $bkgd = background();
+    //TODO(getcwd().':"'.$bkgd.'"');
+
     //echo PHP_EOL."<p>cmd={$cmd}</p>".PHP_EOL;
     //echo PHP_EOL."<p>top={$top}</p>".PHP_EOL;
     //echo PHP_EOL."<p>web={$web}</p>".PHP_EOL;
@@ -96,7 +99,7 @@ HDATA;
     //else
     {
         $head = "<head>{$hdata}{$hcode}</head>".PHP_EOL;
-        $body = "<body>{$bdata}{$bcode}</body>".PHP_EOL;
+        $body = "<body{$bkgd}>{$bdata}{$bcode}</body>".PHP_EOL;
         echo "<html>{$head}{$body}</html>".PHP_EOL;
     }
 }

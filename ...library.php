@@ -1,4 +1,30 @@
 <?php
+function background($filename = "background.png") {
+    static $b64 = '';
+
+    if (!$b64) {
+        list($H, $W) = [1186, 905];
+        $background =
+            @imagecreatetruecolor($W, $H) or
+            die('no background img created');
+        $white = imagecolorallocate($background, 255, 255, 255);
+        $gray  = imagecolorallocate($background, 127, 127, 127);
+        imagefill($background, 0, 0, $gray);
+        imagefilledrectangle($background, 5, 5, $W-5, $H-5, $white);
+        imagepng($background, "background.png");
+        imagedestroy($background);
+
+        $contents = file_get_contents("background.png");
+        if ($contents) {
+            $b64 =
+                ' background="data:image/png;base64,'.
+                base64_encode($contents).
+                '"';
+        }
+    }
+    return $b64;
+}
+
 function resource($type, &$the = [], $content) {
     static $number = [];
     static $stored = [];

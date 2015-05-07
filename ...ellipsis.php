@@ -71,14 +71,17 @@ function loadEllipsis() {
     if (file_exists('...ellipsis.png')) {
         $dir = basename(__DIR__);
         $sep = DIRECTORY_SEPARATOR;
-        if (file_exists($dir.$contents)) {
+        $source = __DIR__.$sep.$contents;
+        //TODO("Why not A ".$source."?");
+        if (file_exists($source)) {
             $verbose("Load markdown ...Contents.");
-            $ellipsis['module'][$contents]['data'][] = $dir.$contents;
+            $ellipsis['module'][$contents]['data'][] = $source;
         }
+        //TODO("Why not B ".$dir." with ".$source."?");
         foreach (
             array_map(
                 'trim',
-                explode(PHP_EOL, file_get_contents($contents))) as $section)
+                explode(PHP_EOL, file_get_contents($source))) as $section)
         {
             if ($section == '') continue;
             // if (file_exists($section.$contents))

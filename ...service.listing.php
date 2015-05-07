@@ -16,7 +16,14 @@ function listing($the =
 
     if (is_array($the)) {
         extract($the);
-        if (!isset($code)) return "TODO[nocode.{$id}]";
+        if (!isset($code)) {
+            if (isset($id) and isset($prearray[$id])) {
+                $show = $prearray[$id];
+                return "{$show}";
+            } else {
+                return "TODO[nocode.{$id}]";
+            }
+        }
         $explicit = attributes($code);
         $att = [
             'cellspacing' => '5',

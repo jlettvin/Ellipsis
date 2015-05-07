@@ -58,7 +58,9 @@ function reference($the = []) {
             $return .= "<sup>{$refno}</sup>";
         }
     } else {
-        $return = 'Calls to reference require 2 parts ref, or 4 parts def.';
+        $tag = isset($id) ? $id : 'noID';
+        $return = "reference.{$tag}.UNDEFINED";
+        //$return = 'Calls to reference require 2 parts ref, or 4 parts def.';
     }
     return $return;
 }

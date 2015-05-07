@@ -1,14 +1,15 @@
-___Competency in many difficult-to-master software languages is
+___Competency in a variety of subtle and complex software languages is
 required when writing a scientific paper.
 Separate languages are needed for generating and displaying
 equations, plots, charts, graphs, images, listings, tables.
 The Xenofile principle is to offer the ease of each language
 while hiding the tricky bits in specialty service modules.
 
-___In this paper, we illustrate the use of this ellipsis library
-with demonstrations of several of these specialty languages.
+___In this paper, we illustrate the use of the ellipsis library (this package)
+with demonstrations of how several of these specialty languages
+have been integrated.
 For instance, we show the use of
-gnuplot and graphviz through service modules.
+gnuplot and graphviz through what we call service modules.
 
 === Development cycle
 ___Software engineers consider the development cycle to be costly
@@ -17,13 +18,21 @@ These efforts are focused primarily on their own needs,
 but these efforts are quite productive when put in service to
 groups having similar needs, like scientific authors.
 
-___Ellipsis, this library, reduces the writer's development cycle
+___Ellipsis (this package) reduces a writer's development cycle
 to writing text and including efficient calls to simplified services
-to generate and organize the images to accompany the text.
+to generate and organize images to accompany text.
 The development cycle consists of two steps: edit and refresh.
 The developer uses their favorite text editor to improve their source
 then refreshes a browser window on the improved source.
 The cycle is tight and rapid.
+
+=== HELP!
+___Some challenges are keeping this package from living up to its potential.
+One major challenge is the effective management of page breaks.
+We currently use a vernier of the combination of fixed size white rectangles
+and a red horizontal line to force a rough alignment
+which enables a heuristic guess on "best" page breaking.
+Advice is requested on a better approach.
 
 === Examples
 ___Here are two examples of image inclusions made possible
@@ -33,6 +42,7 @@ The second and fourth are plots.
 `equation.quadratic|the quadratic formula|-b \pm \sqrt{b^2 - 4ac} \over 2a`
 `gnuplot.cos|cos(x) and sin(x)|{width="256" height="256"}plot cos(x) lw 3,sin(x) lw 3`
 `equation.Euler|Euler's identity|e^{i\pi}+1=0`
+^^^^^
 `gnuplot.Airy|Airy(x,y)|
 {width="256" height="256"}radius(a,x,y)=pi*sqrt((a*x)**2+(a*y)**2);
 wave(a,x,y)=2*besj1(radius(a,x,y))/(radius(a,x,y));

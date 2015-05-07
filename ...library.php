@@ -1,9 +1,8 @@
 <?php
-function background($filename = "background.png") {
+function background($W = 907, $H = 1186) {
     static $b64 = '';
 
     if (!$b64) {
-        list($H, $W) = [1186, 905];
         $background =
             @imagecreatetruecolor($W, $H) or
             die('no background img created');

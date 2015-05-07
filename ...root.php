@@ -24,6 +24,8 @@ define(XF_VERTICAL      , XFV);
 define(XF_WORD          , XFW);
 define(XF_END           , XFZ);
 
+define(EL_PAGE          , false);
+
 function TODO($msg, $still=true) {
     /// TODO function identifies points in code where work is to be done.
     $bt = debug_backtrace();
@@ -65,42 +67,44 @@ function root($argv=['www']) {
              'web'=>(php_sapi_name()=='cli-server'),                        ]);
 
     $bkgd = background();
-    //TODO(getcwd().':"'.$bkgd.'"');
-
-    //echo PHP_EOL."<p>cmd={$cmd}</p>".PHP_EOL;
-    //echo PHP_EOL."<p>top={$top}</p>".PHP_EOL;
-    //echo PHP_EOL."<p>web={$web}</p>".PHP_EOL;
-
-    //if      ($cmd) $bcode =  div($dirs, count($argv)>1?$argv[1]:'');
-    //else if ($web) $bcode = body($dirs, $argv);
 
     $bcode = '';
-    $bdata = '';
-
-    //if      ($cmd and !$top) $bcode =  div($dirs, count($argv)>1?$argv[1]:'');
-
-    //if      ($cmd and !$top) $bcode = body($dirs, $argv);
-    //else if ($web  or  $cmd) $bcode = body($dirs, $argv);
-    //else exit -1;
+    $hcode = "".PHP_EOL;
     $bcode = body($dirs, $argv);
 
+    $bdata = '';
     /// Use MathJax to interpret TeX into displayable equations.
     $hdata = <<<HDATA
 <link rel="icon" type="image/png" href="...ellipsis.png" />
 <script type="text/javascript" src="{$MathJaxURL}?{$MathJaxQRY}"></script> 
-<style>
+<style type="text/css">
 table {margin:6px}
+.page {
+  width: 905px;
+  height: 1200px;
+  background-color: white;
+  border: solid;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  padding: 10px 10px 10px 10px;
+  border-color: lightgray;
+  border-width: thin;
+  marks: cross;
+}
 </style>
 HDATA;
-    $hcode = "".PHP_EOL;
-    //$bdata = body($branches, $argv).PHP_EOL;
-    //$bcode = "".PHP_EOL;
-    //if ($cmd) echo "<div>{$bcode}</div>";
-    //else
-    {
-        $head = "<head>{$hdata}{$hcode}</head>".PHP_EOL;
-        $body = "<body{$bkgd}>{$bdata}{$bcode}</body>".PHP_EOL;
-        echo "<html>{$head}{$body}</html>".PHP_EOL;
+
+    $dodiv = '';
+    $undiv = '';
+    if (EL_PAGE) {
+        $dodiv = '<div class="page">';
+        $undiv = '</div>';
     }
+
+    $head = "<head>{$hdata}{$hcode}</head>".PHP_EOL;
+    $body = "<body{$bkgd}>{$dodiv}{$bdata}{$bcode}{$undiv}</body>".PHP_EOL;
+    echo "<html>{$head}{$body}</html>".PHP_EOL;
+
 }
 ?>

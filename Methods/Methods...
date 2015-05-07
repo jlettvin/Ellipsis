@@ -11,12 +11,12 @@ It can also be achieved with backticks enclosing three spaces.
 `  `Backticks enclosing two spaces separates sentences by more than one space.
 
 
-___Ordinary HTML wraps text around
-images and other block material aligned to either side.
-`  `To avoid this, a string of four 'v's (letters v) in a row
+___HTML wraps text around block material like images.
+A string of four '^'s (carets) in a row
 forces text to continue underneath the block.
-`  `To stop the current line and continue on the next,
-a string of three 'v's becomes a simple line break.
+To stop the current line and continue on the next,
+a string of three '^'s becomes a simple line break.
+Five '^'s is a page break.
 
 ==== Equations
 
@@ -31,7 +31,15 @@ has not been defined yet but will be defined below.
     `equation.quadratic|the quadratic formula|-b \pm \sqrt{b^2 - 4ac} \over 2a`
 `   `Here we show the quadratic `equation.quadratic` to illustrate that
 numbering extends over multiple equations.
-
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^^^
 `equation`
 `equation?This is a bookmark for a future equation.`
 `equation?`
@@ -49,7 +57,11 @@ Here, we backtick a future plot.
 
 Here, we ask for the gnuplot service documentation.
 `gnuplot?`
-
+^^^
+^^^
+^^^
+^^^
+^^^^^
 Here, we backtick define a gnuplot.
 `gnuplot.cos|cos(x) and sin(x)|{width="256" height="256"}plot cos(x) lw 3,sin(x) lw 3`
 This is text that wraps around the image.
@@ -74,13 +86,62 @@ Mountain spring.  Quick!  Look!
 Spotless leopard frog kicks deep.
 Sweet cold green water.
 `
-^^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^^^
 
 ==== Directory Tree
 `dirtree.dirtree|dirtee|foo`
-
-==== Other random
-
-`symboltable`
 `anonymous.thing|does nothing|This is not interesting.`
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^
+^^^^^
+==== Other random
+___The remainder of this manual is output from the symbol table
+which actually works as a reference to what can be found where
+in the Ellipsis code base.
+`symboltable`
 `?`
